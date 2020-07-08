@@ -20,6 +20,7 @@
       }
       .landing {
         text-align: center;
+        position: relative;
       }
       #name-box {
         font-size: 50px;
@@ -27,6 +28,21 @@
         text-align: center;
         text-transform: lowercase;
         color: gray;
+      }
+      .landing:hover {
+        animation-name:fade-up;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes fade-up {
+        0%  {
+          opacity: 0%;
+            top: 30px;
+        }
+        100% {
+          opacity: 100%;
+          top: 0px;
+        }
       }
     </style>
   </head>
