@@ -52,16 +52,19 @@
       @media
     </style>
     <script>
-      
+      function addtext(){
+            document.getElementById('question').innerHTML='<p>Who's there?</p>
+        <input type="text" id="name-box" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
+        <button type="submit" style="visibility: hidden;"></button>';
+            }
+    }
+      }
     </script>
   </head>
   <body>
     <div class="landing">
       <img class="big-image" src="https://i.gifer.com/D9u.gif" alt="A cute orange cat spinning with a present.">
-      <div class="whos-there">
-        <p>Who's there?</p>
-        <input type="text" id="name-box" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-        <button type="submit" style="visibility: hidden;"></button>
+      <div class="whos-there" id="question">
       </div>
     </div>
      <br>
