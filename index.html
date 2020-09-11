@@ -66,13 +66,27 @@ $(document).ready(function(){
 });
 </script>
     <script type="text/javascript">
-      function askMe(){
-            document.getElementById('question').innerHTML='<p>Who's there?</p>
-        <input type="text" id="name-box" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-        <button type="submit" style="visibility: hidden;"></button>';
-            }
-    }
-      }
+     var nameValue = document.getElementById("name-box").value;
+     var visitor;
+     switch(nameValue) {
+       case 'suz':
+       case 'suzannah':
+       case 'suzannah schwarz':
+         visitor = "suz";
+         break;
+       case 'ana':
+         visitor = "ana";
+         break;
+       case 'jordan':
+         visitor = "jordan";
+         break;
+       case 'helene':
+         visitor = "helene";
+         break;
+       case "hyeon":
+         visitor = "hyeon";
+         break;
+     }
     </script>
   </head>
   <body>
