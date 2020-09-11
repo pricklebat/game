@@ -35,21 +35,6 @@
         display: none;
         position: relative;
       }
-      .whos-there:hover {
-        animation-name:fade-up;
-        animation-duration: 2s;
-        animation-fill-mode: forwards;
-      }
-      @keyframes fade-up {
-        0%  {
-          opacity: 0%;
-            top: 30px;
-        }
-        100% {
-          opacity: 100%;
-          top: 0px;
-        }
-      }
       @media
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -57,7 +42,7 @@
 $(document).ready(function(){
   $(".big-image").click(function(){
     $(".big-image").fadeOut("slow");
-    $(".whos-there").fadeIn("slow");
+    $(".whos-there").fadeIn(500);
   });
 });
 </script>
