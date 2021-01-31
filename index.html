@@ -74,8 +74,9 @@ $(document).ready(function(){
 </script>
     <script type="text/javascript">
      function getName(){
-     var nameValue = document.getElementById("name-box").value;\
-     document.getElementById('whos-there').style.visibility='hidden';
+     var nameValue = document.getElementById("name-box").value;
+     var questions = document.getElementById("landing").value;
+     questions.style.visibility = 'hidden';
      var visitor;
      switch(nameValue) {
        case 'suz':
