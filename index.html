@@ -73,10 +73,11 @@ $(document).ready(function(){
 });
 </script>
     <script type="text/javascript">
+     function disappear(){
+     document.getElementById('whos-there').style.display = 'none';
+     }
      function getName(){
      var nameValue = document.getElementById("name-box").value;
-     var questions = document.getElementById("landing").value;
-     questions.style.visibility = 'hidden';
      var visitor;
      switch(nameValue) {
        case 'suz':
@@ -113,7 +114,7 @@ $(document).ready(function(){
       <div class="whos-there">
         <span id="question"><p>Who's there?</p>
         <input type="text" name="name" id="name-box" value="a friend?" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-        <button onclick="getName()" type="submit">that's me!</button>
+        <button onclick="disappear()" type="submit">that's me!</button>
       </div>
     </div>
      <br>
