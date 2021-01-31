@@ -67,9 +67,6 @@ $(document).ready(function(){
 </script>
     <script type="text/javascript">
      function getName(){
-       var str = document.getElementById("name-box").value;
-       alert(str);
-     }
      var nameValue = document.getElementById("name-box").value;
      var visitor;
      switch(nameValue) {
@@ -95,6 +92,7 @@ $(document).ready(function(){
          break;
      }
       alert(visitor);
+     }
     </script>
   </head>
   <body>
@@ -103,7 +101,7 @@ $(document).ready(function(){
       <div class="whos-there">
         <span id="question"><p>Who's there?</p>
         <input type="text" name="name" id="name-box" value="a friend?" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-        <button onclick="getName()" type="submit">click</button>
+        <button onclick="getName()" type="submit">that's me!</button>
       </div>
     </div>
      <br>
