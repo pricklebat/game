@@ -85,7 +85,6 @@ $(document).ready(function(){
        case 'Suzannah schwarz':
        case 'Suzannah Schwarz':
          visitor = "suz";
-         document.getElementById("suz").style.display = "";
          break;
        case 'ana':
          visitor = "ana";
@@ -103,7 +102,7 @@ $(document).ready(function(){
          visitor = "stranger";
          break;
      }
-      alert(visitor);
+      document.getElementById(visitor).style.display = "block";
      }
     </script>
   </head>
