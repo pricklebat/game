@@ -73,10 +73,7 @@ $(document).ready(function(){
 });
 </script>
     <script type="text/javascript">
-      function disappear(){
-        document.getElementById("landing").style.display="none"; 
-      }
-   /* function getName(){
+   function getName(){
      var nameValue = document.getElementById("name-box").value;
      var visitor;
      switch(nameValue) {
@@ -105,7 +102,7 @@ $(document).ready(function(){
          visitor = "stranger";
          break;
      }
-     } */
+     }
     </script>
   </head>
   <body>
@@ -114,11 +111,11 @@ $(document).ready(function(){
       <div class="whos-there">
         <span id="question"><p>Who's there?</p>
         <input type="text" name="name" id="name-box" value="a friend?" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-       </div>
-          <button onclick="disappear()" type="submit" id="button">that's me!</button>
+          <button onclick="getName()" type="submit" id="button">that's me!</button>
+        </div>
     </div>
      <br>
-    <!--<div class="allReplies">
+    <div class="allReplies">
       <div class="helene">
         <p>Hi Helene! I found something you might appreciate.<br>
         <a href="https://www.youtube.com/watch?v=xOmEjaZb6cU">This is for you.</a></p><br>
@@ -142,6 +139,6 @@ $(document).ready(function(){
       <div class="stranger">
         <p><a href="https://www.youtube.com/watch?v=vU1NEZ9sTOM">nu phone hu dis</a>
       </div>
-    </div>-->
+    </div>
   </body>
 </html>
