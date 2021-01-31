@@ -12,10 +12,11 @@
         text-transform: lowercase;
       }
       button {
-        font-size: 50px;
+        font-size: 30px;
+        font-family: 'Enriqueta', serif;
         border-radius: 12px;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         background-color: #e7e7e7; color: black;
+        padding-top: 10px;
       }
       .big-image {
         width: 500px;
@@ -110,7 +111,7 @@ $(document).ready(function(){
       <img class="big-image" src="https://i.gifer.com/D9u.gif" alt="A cute orange cat spinning with a present." onclick="askMe();">
       <div class="whos-there">
         <span id="question"><p>Who's there?</p>
-        <input type="text" name="name" id="name-box" value="a friend?" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br><br>
+        <input type="text" name="name" id="name-box" value="a friend?" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
         <button onclick="getName()" type="submit">that's me!</button>
       </div>
     </div>
