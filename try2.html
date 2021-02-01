@@ -24,9 +24,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("button").click(function(){
+  $("#b1").click(function(){
     $(".helene").show();
-    $("button").hide();
+    $("#whos-there").hide();
   });
 });
 </script>
@@ -34,8 +34,12 @@ $(document).ready(function(){
     </script>
   </head>
   <body>
-    <div id="button">
-    <button id='b1'>Give me a present!</button>
+    <div id='whos-there' style="display: none;">
+     <form>
+        <input type="text">
+        <input type="submit">
+     </form>
+      <button id='b1'>Give me a present!</button>
     </div>
     <div id="allReplies">
       <div class="helene">
