@@ -31,6 +31,37 @@ $(document).ready(function(){
 });
 </script>
     <script type="text/javascript">
+   function getName(){
+     var nameValue = document.getElementById("name-box").value;
+     var visitor;
+     switch(nameValue) {
+       case 'suz':
+       case 'suzannah':
+       case 'suzannah schwarz':
+       case 'Suz':
+       case 'Suzannah':
+       case 'Suzannah schwarz':
+       case 'Suzannah Schwarz':
+         visitor = "suz";
+         break;
+       case 'ana':
+         visitor = "ana";
+         break;
+       case 'jordan':
+         visitor = "jordan";
+         break;
+       case 'helene':
+         visitor = "helene";
+         break;
+       case "hyeon":
+         visitor = "hyeon";
+         break;
+       default:
+         visitor = "stranger";
+         break;
+     }
+     alert(visitor);
+     }
     </script>
   </head>
   <body>
