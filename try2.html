@@ -35,24 +35,24 @@ $(document).ready(function(){
        case 'Suzannah':
        case 'Suzannah schwarz':
        case 'Suzannah Schwarz':
-         visitor = "suz";
+         visitor = ".suz";
          break;
        case 'ana':
-         visitor = "ana";
+         visitor = ".ana";
          break;
        case 'jordan':
-         visitor = "jordan";
+         visitor = ".jordan";
          break;
        case 'helene':
-         visitor = "helene";
+         visitor = ".helene";
          break;
        case "hyeon":
-         visitor = "hyeon";
+         visitor = ".hyeon";
          break;
        default:
-         visitor = "stranger";
+         visitor = ".stranger";
          break;
-    $(".helene").show();
+    $(visitor).show();
     $("#whos-there").hide();
   });
 });
