@@ -74,8 +74,9 @@ $(document).ready(function(){
 });
   $(document).ready(function(){
   $("#b1").click(function(){
-    $(".whos-there").fadeOut("slow");
-    $("." + visitor).fadeIn(4000);
+    $(".whos-there").fadeOut("slow", function() {
+       $("." + visitor).fadeIn(4000);
+    });
   });
 });
 </script>
