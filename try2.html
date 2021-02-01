@@ -3,13 +3,18 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+  $('#b1').click(function () {
+    $('.allReplies').toggle();
+})
 </script>
     <script type="text/javascript">
     </script>
   </head>
   <body>
+    <div id="button">
+    <button id='b1'>Give me a present!</button>
+    </div>
     <div class="allReplies">
-      <button type="button" class="btn">Click Me!</button><br>
       <div class="helene" style="visibility: hidden">
         <p>Hi Helene! I found something you might appreciate.<br>
         <a href="https://www.youtube.com/watch?v=xOmEjaZb6cU">This is for you.</a></p><br>
