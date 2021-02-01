@@ -73,8 +73,8 @@ $(document).ready(function(){
 });
   $(document).ready(function(){
   $("#b1").click(function(){
-    $("." + visitor).show();
-    $(".whos-there").hide();
+    $(".whos-there").fadeOut("slow");
+    $("." + visitor).fadeIn(4000);
   });
 });
 </script>
@@ -93,15 +93,22 @@ $(document).ready(function(){
          visitor = "suz";
          break;
        case 'ana':
+       case 'Ana':
          visitor = "ana";
          break;
        case 'jordan':
+       case 'Jordan':
          visitor = "jordan";
          break;
        case 'helene':
+       case 'Helene':
          visitor = "helene";
          break;
        case "hyeon":
+       case "Hyeon":
+       case "이강현":
+       case "강현":
+       case "현":
          visitor = "hyeon";
          break;
        default:
