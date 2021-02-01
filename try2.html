@@ -25,35 +25,8 @@
 <script>
 $(document).ready(function(){
   $("#b1").click(function(){
-     var nameValue = document.getElementById("name-box").value;
-     var visitor;
-     switch(nameValue) {
-       case 'suz':
-       case 'suzannah':
-       case 'suzannah schwarz':
-       case 'Suz':
-       case 'Suzannah':
-       case 'Suzannah schwarz':
-       case 'Suzannah Schwarz':
-         visitor = ".suz";
-         break;
-       case 'ana':
-         visitor = ".ana";
-         break;
-       case 'jordan':
-         visitor = ".jordan";
-         break;
-       case 'helene':
-         visitor = ".helene";
-         break;
-       case "hyeon":
-         visitor = ".hyeon";
-         break;
-       default:
-         visitor = ".stranger";
-         break;
-    $(visitor).show();
-    $("#whos-there").hide();
+    $(".jordan").show();
+    $(".whos-there").hide();
   });
 });
 </script>
@@ -61,12 +34,11 @@ $(document).ready(function(){
     </script>
   </head>
   <body>
-    <div id='whos-there'>
-     <form>
-        <input type="text" name="name" class="name-box">
-     </form>
-      <button id='b1'>Give me a present!</button>
-    </div>
+    <div class="whos-there">
+        <span id="question"><p>Who's there?</p>
+        <input type="text" name="name" id="name-box" value="a friend?" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
+          <button onclick="getName()" type="submit" id="b1">that's me!</button>
+        </div>
     <div id="allReplies">
       <div class="helene">
         <p>Hi Helene! I found something you might appreciate.<br>
