@@ -2,107 +2,10 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Enriqueta&display=swap" rel="stylesheet">
-    <style>
-      p {
-        font-size: 55px;
-        font-family: 'Enriqueta', serif;
-        text-align: center;
-        padding-left: 5%;
-        padding-right: 5%;
-        text-transform: lowercase;
-      }
-      button {
-        font-size: 20px;
-        font-family: 'Enriqueta', serif;
-        border-radius: 12px;
-        background-color: #e7e7e7; color: black;
-        margin-top: 10px;
-      }
-      .big-image {
-        width: 500px;
-        padding-top: 60px;
-        max-width: 100%;
-        height: auto;
-      }
-      .big-image:hover {
-        transform: scale(1.2); 
-      }
-      .landing {
-        text-align: center;
-      }
-      #name-box {
-        font-size: 70px;
-        font-family: 'Enriqueta', serif;
-        text-align: center;
-        text-transform: lowercase;
-        color: gray;
-        margin-top: -50px;
-      }
-      .whos-there {
-        display: none;
-        position: relative;
-        padding-top: 220px;
-      }
-      .helene {
-        display: none;
-      }
-      .ana {
-        display: none;
-      }
-      .jordan {
-        display: none;
-      }
-      .suz {
-        display: none;
-      }
-      .hyeon {
-        display: none;
-      }
-      .stranger {
-        display: none;
-      }
-      @media
-    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-  $(".big-image").click(function(){
-    $(".big-image").fadeOut("slow");
-    $(".whos-there").fadeIn(4000);
-  });
-});
 </script>
     <script type="text/javascript">
-   function getName(){
-     var nameValue = document.getElementById("name-box").value;
-     var visitor;
-     switch(nameValue) {
-       case 'suz':
-       case 'suzannah':
-       case 'suzannah schwarz':
-       case 'Suz':
-       case 'Suzannah':
-       case 'Suzannah schwarz':
-       case 'Suzannah Schwarz':
-         visitor = "suz";
-         break;
-       case 'ana':
-         visitor = "ana";
-         break;
-       case 'jordan':
-         visitor = "jordan";
-         break;
-       case 'helene':
-         visitor = "helene";
-         break;
-       case "hyeon":
-         visitor = "hyeon";
-         break;
-       default:
-         visitor = "stranger";
-         break;
-     }
-     }
     </script>
   </head>
   <body>
@@ -111,7 +14,7 @@ $(document).ready(function(){
       <div class="whos-there">
         <span id="question"><p>Who's there?</p>
         <input type="text" name="name" id="name-box" value="a friend?" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-          <button onclick="getName()" type="submit" id="button">that's me!</button>
+          <button onclick= type="submit" id="button">that's me!</button>
         </div>
     </div>
      <br>
