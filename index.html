@@ -67,9 +67,9 @@
 <script>
 $(document).ready(function(){
   $(".big-image").click(function(){
-    $(".big-image").fadeOut("slow");
-    $(".whos-there").fadeIn(4000);
-  });
+    $(".big-image").fadeOut("slow", function() {
+     $(".whos-there").fadeIn(4000);
+    });
 });
   $(document).ready(function(){
   $("#b1").click(function(){
