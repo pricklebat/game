@@ -71,10 +71,9 @@
     $(".whos-there").fadeIn(4000);
   });
 });
-    $(document).ready(function(){
-  $(".button").click(function(){
-    $(".whos-there").fadeOut("slow");
-    $(".suz").fadeIn(4000);
+$( "#button1" ).click(function() {
+  $( "#whos-there" ).fadeOut( "slow", function() {
+    // Animation complete.
   });
 });
 </script>
@@ -87,7 +86,7 @@
       <div class="whos-there">
         <span id="question"><p>Who's there?</p>
         <input type="text" name="name" id="name-box" value="a friend?" style="border: 0; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-          <button type="submit" id="button">that's me!</button>
+          <button type="submit" id="button1">that's me!</button>
         </div>
     </div>
      <br>
