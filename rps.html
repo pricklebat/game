@@ -21,6 +21,15 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    function getNames(){
+     document.getElementById("player1").innerHTML =
+              document.getElementByID("name-box1").value;
+      document.getElementById("player2").innerHTML =
+              document.getElementByID("name-box2").value;
+    }
+  </script>
 
 </head>
 
@@ -30,12 +39,19 @@
         <span id="question"><p>Student Names</p>
         <input type="text" name="name1" id="name-box1" value="Name1" style="border: 3; border-width: 0px; -webkit-appearance: none" required autofocus><br>
         <input type="text" name="name2" id="name-box2" value="Name2" style="border: 3; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-          <button onclick="getName()" type="submit" id="b1">Click</button>
-        </div>
+          <button onclick="getNames();" type="submit" id="b1">Click</button>
+  </div>
+  <div class="playerOne">
+    <p><span id="player1"></span></p>
+  </div>
+  <div class="playerTwo">
+    <p><span id="player2"></span></p>
+  </div>
   <img src="https://www.the-random-generator.com/img/rock.jpg" alt="rock" width="400" height="400">
   <img src="https://www.the-random-generator.com/img/paper.jpg" alt="paper" width="400" height="400">
   <img src="https://www.the-random-generator.com/img/scissors.jpg" alt="scissors" width="400" height="400">
         
+  <p 
   <!-- your content here... -->
   <script src="js/scripts.js"></script>
 </body>
