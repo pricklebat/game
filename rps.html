@@ -52,7 +52,7 @@
               document.getElementById("name-box2").value;
     }
 
-function randomImgs() {
+function startGame() {
     var myImages1 = new Array();
     myImages1[1] = "https://www.the-random-generator.com/img/rock.jpg";
     myImages1[2] = "https://www.the-random-generator.com/img/paper.jpg";
@@ -61,6 +61,7 @@ function randomImgs() {
     if (rnd == 0) {
             rnd = 1;
     }
+    document.write('<img class="who" src="' + myImages1[rnd] + '">');
     document.write('<img class="who" src="' + myImages1[rnd] + '">');
 }
     
