@@ -25,9 +25,9 @@
   <script type="text/javascript">
     function getNames(){
      document.getElementById("player1").innerHTML =
-              document.getElementByID("name-box1").value;
+              document.getElementById("name-box1").value;
       document.getElementById("player2").innerHTML =
-              document.getElementByID("name-box2").value;
+              document.getElementById("name-box2").value;
     }
   </script>
 
@@ -37,9 +37,11 @@
   <h1 style="text-align:center">Rock Paper Scissors</h1>
   <div class="studentNames">
         <span id="question"><p>Student Names</p>
+          <form>
         <input type="text" name="name1" id="name-box1" value="Name1" style="border: 3; border-width: 0px; -webkit-appearance: none" required autofocus><br>
         <input type="text" name="name2" id="name-box2" value="Name2" style="border: 3; border-width: 0px; -webkit-appearance: none" required autofocus><br>
-          <button onclick="getNames();" type="submit" id="b1">Click</button>
+          </form>
+            <input type="submit" onclick="getNames();" id="b1"><br/>
   </div>
   <div class="playerOne">
     <p><span id="player1"></span></p>
