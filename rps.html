@@ -44,26 +44,32 @@
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
+        function generateRandomInteger(max) {
+    return Math.floor(Math.random() * max) + 1;
+}
+     let value1 = generateRandomInteger(3);
+     let value2 = generateRandomInteger(3);
+    
     function getNames(){
      document.getElementById("player1").innerHTML =
               document.getElementById("name-box1").value;
       document.getElementById("player2").innerHTML =
               document.getElementById("name-box2").value;
-    }
-    function generateRandomInteger(max) {
-    return Math.floor(Math.random() * max) + 1;
-}
-     let value1 = generateRandomInteger(3);
-     let value2 = generateRandomInteger(3);
-    function getName(){
-      var x;
-     switch(value1) {
-       case 1:  document.getElementById("rock").style.display="visible";
-       case 2:  document.getElementById("paper").style.display="visible";
-       case 3:  document.getElementById("scissors").style.display="visible";
+            var x;
+      switch(value1) {
+       case 1:
+            x = "Rock";
+            document.getElementById("rock").style.display="visible";
+       case 2:
+          x = "Paper";
+          document.getElementById("paper").style.display="visible";
+       case 3:
+          x = "Scissors";
+          document.getElementById("scissors").style.display="visible";
             break;
      document.getElementById("hand1").innerHTML=x;
-     }
+    }
+
     
     
     
@@ -81,7 +87,7 @@
           </form>
             <input type="submit" onclick="getNames();" id="b1"><br/>
   </div>
-    <p id="demo"></p>
+    <p id="hand1"></p>
   <div class="playerOne">
     <p><span id="player1"></span></p>
     <p><span id="player1"></span></p>
