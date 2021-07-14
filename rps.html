@@ -69,8 +69,8 @@ function startGame() {
     if (rnd == 0) {
             rnd = 1;
     }
-    document.write('<img class="who" src="' + myImages1[rnd] + '">');
-    document.write('<img class="who" src="' + myImages2[rnd] + '">');
+     document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd] + '">');
+     document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd] + '">');
 }
     
   </script>
@@ -90,11 +90,12 @@ function startGame() {
     <div>
 <button id="gameStart" onclick="startGame();">Let's Go!</button> 
 </div>
-    <p id="hand1"></p>
   <div class="playerOne">
+    <p id="hand1"></p>
     <p><span id="player1"></span></p>
   </div>
   <div class="playerTwo">
+    <p id="hand2"></p>
     <p><span id="player2"></span></p>
   </div>
   <img class="rock" src="https://www.the-random-generator.com/img/rock.jpg" id="rock" alt="rock" width="400" height="400">
