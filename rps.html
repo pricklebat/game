@@ -51,18 +51,51 @@
       document.getElementById("player2").innerHTML =
               document.getElementById("name-box2").value;
     }
-        function letsGo(){
-      Random rand = new Random();
-   switch(rand.nextInt(3)+1) {
-       case 1:
-            document.getElementById("rock").style.display="visible";
-       case 2:
-          document.getElementById("paper").style.display="visible";
-       case 3:
-          document.getElementById("scissors").style.display="visible";
-            break;
-   }
-     document.getElementById("hand1").innerHTML;   
+function display_random_images() 
+{
+     var theImages = [{
+        src: "https://www.the-random-generator.com/img/rock.jpg",
+        width: "400",
+        height: "400"
+    }, {
+        src: "https://www.the-random-generator.com/img/paper.jpg",
+        width: "400",
+        height: "400"
+    }, {
+        src: "https://www.the-random-generator.com/img/scissors.jpg",
+        width: "400",
+        height: "400"
+    }];
+    
+    var preBuffer = [];
+    for (var i = 0, j = theImages.length; i < j; i++) {
+        preBuffer[i] = new Image();
+        preBuffer[i].src = theImages[i].src;
+        preBuffer[i].width = theImages[i].width;
+        preBuffer[i].height = theImages[i].height;
+    }
+   
+// create random image number
+  function getRandomInt(min,max) 
+    {
+      //  return Math.floor(Math.random() * (max - min + 1)) + min;
+    
+imn = Math.floor(Math.random() * (max - min + 1)) + min;
+    return preBuffer[imn];
+    }  
+
+// 0 is first image,   preBuffer.length - 1) is  last image
+  
+var newImage = getRandomInt(0, preBuffer.length - 1);
+ 
+// remove the previous images
+var images = document.getElementsByTagName('img');
+var l = images.length;
+for (var p = 0; p < l; p++) {
+    images[0].parentNode.removeChild(images[0]);
+}
+// display the image  
+document.body.appendChild(newImage);
 }
 
     
@@ -80,6 +113,10 @@
           </form>
             <input type="submit" onclick="getNames();" id="b1"><br/>
   </div>
+    <div>
+<button id="gameStart" 
+onclick="display_random_image();">Let's Go!</button> 
+</div>
     <p id="hand1"></p>
   <div class="playerOne">
     <p><span id="player1"></span></p>
