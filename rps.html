@@ -13,15 +13,15 @@
       }
     
     .rock {
-        visibility: hidden;
+        visibility: none;
       }
     
     .paper {
-        visibility: hidden;
+        visibility: none;
       }
     
     .scissors {
-        visibility: hidden;
+        visibility: none;
       }
   </style>
   <meta charset="utf-8">
@@ -50,6 +50,23 @@
       document.getElementById("player2").innerHTML =
               document.getElementById("name-box2").value;
     }
+    function generateRandomInteger(max) {
+    return Math.floor(Math.random() * max) + 1;
+}
+     let value1 = generateRandomInteger(3);
+     let value2 = generateRandomInteger(3);
+    function getName(){
+      var x;
+     switch(value1) {
+       case 1:  document.getElementById("rock").style.display="visible";
+       case 2:  document.getElementById("paper").style.display="visible";
+       case 3:  document.getElementById("scissors").style.display="visible";
+            break;
+     document.getElementById("hand1").innerHTML=x;
+     }
+    
+    
+    
   </script>
 
 </head>
@@ -64,15 +81,17 @@
           </form>
             <input type="submit" onclick="getNames();" id="b1"><br/>
   </div>
+    <p id="demo"></p>
   <div class="playerOne">
+    <p><span id="player1"></span></p>
     <p><span id="player1"></span></p>
   </div>
   <div class="playerTwo">
     <p><span id="player2"></span></p>
   </div>
-  <img class="rock" src="https://www.the-random-generator.com/img/rock.jpg" alt="rock" width="400" height="400">
-  <img class="paper" src="https://www.the-random-generator.com/img/paper.jpg" alt="paper" width="400" height="400">
-  <img class="scissors" src="https://www.the-random-generator.com/img/scissors.jpg" alt="scissors" width="400" height="400">
+  <img class="rock" src="https://www.the-random-generator.com/img/rock.jpg" id="rock" alt="rock" width="400" height="400">
+  <img class="paper" src="https://www.the-random-generator.com/img/paper.jpg" id="paper" alt="paper" width="400" height="400">
+  <img class="scissors" src="https://www.the-random-generator.com/img/scissors.jpg" id="scissors" alt="scissors" width="400" height="400">
         
   <p 
   <!-- your content here... -->
