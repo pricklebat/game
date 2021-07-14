@@ -12,17 +12,20 @@
         margin-top: -10px;
       }
     
-/*    .rock {
-        display: none;
-      }
-    
-    .paper {
-        display: none;
-      }
-    
-    .scissors {
-        display: none;
-      }*/
+#game {
+    width: 500px;
+    border: 1px solid black;
+    overflow: hidden; /* add this to contain floated children */
+}
+#one {
+    width: 300px;
+    float:left; /* add this */
+    border: 1px solid red;
+}
+#two {
+    border: 1px solid green;
+    float: left; /* add this */
+}
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -90,19 +93,16 @@ function startGame() {
     <div>
 <button id="gameStart" onclick="startGame();">Let's Go!</button> 
 </div>
-  <div class="playerOne">
+ <div id="game">
+  <div class="playerOne" id="one">
     <p id="hand1"></p>
     <p><span id="player1"></span></p>
   </div>
-  <div class="playerTwo">
+  <div class="playerTwo" id= "two">
     <p id="hand2"></p>
     <p><span id="player2"></span></p>
   </div>
-  <img class="rock" src="https://www.the-random-generator.com/img/rock.jpg" id="rock" alt="rock" width="400" height="400">
-  <img class="paper" src="https://www.the-random-generator.com/img/paper.jpg" id="paper" alt="paper" width="400" height="400">
-  <img class="scissors" src="https://www.the-random-generator.com/img/scissors.jpg" id="scissors" alt="scissors" width="400" height="400">
-        
-  <p 
+ </div>
   <!-- your content here... -->
   <script src="js/scripts.js"></script>
 </body>
