@@ -52,20 +52,16 @@
               document.getElementById("name-box2").value;
     }
     function letsGo(){
-      var x;
       Random rand = new Random();
    switch(rand.nextInt(3)+1) {
        case 1:
-            x = "Rock";
             document.getElementById("rock").style.display="visible";
        case 2:
-          x = "Paper";
           document.getElementById("paper").style.display="visible";
        case 3:
-          x = "Scissors";
           document.getElementById("scissors").style.display="visible";
             break;
-     document.getElementById("hand1").innerHTML=x;
+     document.getElementById("hand1").innerHTML;
     }   
 }
     
