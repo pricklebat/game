@@ -61,8 +61,16 @@ function startGame() {
     if (rnd == 0) {
             rnd = 1;
     }
+  var myImages2 = new Array();
+    myImages2[1] = "https://www.the-random-generator.com/img/rock.jpg";
+    myImages2[2] = "https://www.the-random-generator.com/img/paper.jpg";
+    myImages2[3] = "https://www.the-random-generator.com/img/scissors.jpg";
+    var rnd = Math.floor(Math.random() * myImages2.length);
+    if (rnd == 0) {
+            rnd = 1;
+    }
     document.write('<img class="who" src="' + myImages1[rnd] + '">');
-    document.write('<img class="who" src="' + myImages1[rnd] + '">');
+    document.write('<img class="who" src="' + myImages2[rnd] + '">');
 }
     
   </script>
