@@ -44,11 +44,6 @@
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
-        function generateRandomInteger(max) {
-    return Math.floor(Math.random() * max) + 1;
-}
-     let value1 = generateRandomInteger(3);
-     let value2 = generateRandomInteger(3);
     
     function getNames(){
      document.getElementById("player1").innerHTML =
@@ -56,7 +51,7 @@
       document.getElementById("player2").innerHTML =
               document.getElementById("name-box2").value;
             var x;
-      switch(value1) {
+      switch(rand.nextInt(3)+1) {
        case 1:
             x = "Rock";
             document.getElementById("rock").style.display="visible";
