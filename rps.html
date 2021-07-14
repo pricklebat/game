@@ -57,20 +57,20 @@ function startGame() {
     myImages1[1] = "https://www.the-random-generator.com/img/rock.jpg";
     myImages1[2] = "https://www.the-random-generator.com/img/paper.jpg";
     myImages1[3] = "https://www.the-random-generator.com/img/scissors.jpg";
-    var rnd = Math.floor(Math.random() * myImages1.length);
-    if (rnd == 0) {
-            rnd = 1;
+    var rnd1 = Math.floor(Math.random() * myImages1.length);
+    if (rnd1 == 0) {
+            rnd1 = 1;
     }
   var myImages2 = new Array();
     myImages2[1] = "https://www.the-random-generator.com/img/rock.jpg";
     myImages2[2] = "https://www.the-random-generator.com/img/paper.jpg";
     myImages2[3] = "https://www.the-random-generator.com/img/scissors.jpg";
-    var rnd = Math.floor(Math.random() * myImages2.length);
-    if (rnd == 0) {
-            rnd = 1;
+    var rnd2 = Math.floor(Math.random() * myImages2.length);
+    if (rnd2 == 0) {
+            rnd2 = 1;
     }
-     document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd] + '">');
-     document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd] + '">');
+     document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd1] + '">');
+     document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd2] + '">');
 }
     
   </script>
