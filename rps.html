@@ -21,7 +21,28 @@
 	font-size: 20px;
         font-family: 'Tahoma', sans-serif;
 	  }
-    
+	  
+#wholePage {
+	    border: 1px solid black;
+    overflow: hidden; /* add this to contain floated children */
+	
+width: 1000px;
+	height: 1000px;	
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+	  }
+	  
+ #rpsGame {
+float:left;
+	  }
+	
+    #spinnerWheel {
+ float:right;
+	  }
 #game {
     border: 1px solid black;
     overflow: hidden; /* add this to contain floated children */
@@ -41,10 +62,7 @@ width: 700px;
 #two {
     float:right;
 }
-#spinnerWheel {
-  width: 50%;
-  margin: 0 auto;
-	  }
+
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -118,7 +136,8 @@ function startGame() {
 
 <body>
   <h1 style="text-align:center; font-family:'Tahoma', sans-serif;">Rock Paper Scissors</h1>
-	<div class="rpsGame">
+	<div id="wholePage">
+	<div id="rpsGame">
   <div class="studentNames">
         <span id="question"><p>Student Names</p>
           <form>
@@ -140,6 +159,7 @@ function startGame() {
 </div><br>
 <div id="spinnerWheel">
 <iframe src="https://wheeldecide.com/e.php?c1=2000&c2=half+your+points&c3=1500&c4=500&c5=-1000&c6=bomb+to+the+other+team&c7=1500&c8=5000&c9=copy+the+other+teams+points&c10=1000&c11=double+your+points&c12=-500&c13=switch&c14=1000&c15=bomb&t=Points&time=5" width="500" height="500" scrolling="no" frameborder="0"></iframe>
+</div>
 </div>
   <!-- your content here... -->
   <script src="js/scripts.js"></script>
