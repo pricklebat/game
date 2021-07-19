@@ -62,53 +62,8 @@ width: 700px;
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
-    
-    function getNames(){
-     document.getElementById("player1").innerHTML =
-              document.getElementById("name-box1").value;
-      document.getElementById("player2").innerHTML =
-              document.getElementById("name-box2").value;
-	        var myImages1 = new Array();
-    myImages1[1] = "https://www.the-random-generator.com/img/rock.jpg";
-    myImages1[2] = "https://www.the-random-generator.com/img/paper.jpg";
-    myImages1[3] = "https://www.the-random-generator.com/img/scissors.jpg";
-    var rnd1 = Math.floor(Math.random() * myImages1.length);
-    if (rnd1 == 0) {
-            rnd1 = 1;
-    }
-  var myImages2 = new Array();
-    myImages2[1] = "https://www.the-random-generator.com/img/rock.jpg";
-    myImages2[2] = "https://www.the-random-generator.com/img/paper.jpg";
-    myImages2[3] = "https://www.the-random-generator.com/img/scissors.jpg";
-    var rnd2 = Math.floor(Math.random() * myImages2.length);
-    if (rnd2 == 0) {
-            rnd2 = 1;
-    }
-     document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd1] + '">');
-     document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd2] + '">');
-    }
-
-function startGame() {
-    var myImages1 = new Array();
-    myImages1[1] = "https://www.the-random-generator.com/img/rock.jpg";
-    myImages1[2] = "https://www.the-random-generator.com/img/paper.jpg";
-    myImages1[3] = "https://www.the-random-generator.com/img/scissors.jpg";
-    var rnd1 = Math.floor(Math.random() * myImages1.length);
-    if (rnd1 == 0) {
-            rnd1 = 1;
-    }
-  var myImages2 = new Array();
-    myImages2[1] = "https://www.the-random-generator.com/img/rock.jpg";
-    myImages2[2] = "https://www.the-random-generator.com/img/paper.jpg";
-    myImages2[3] = "https://www.the-random-generator.com/img/scissors.jpg";
-    var rnd2 = Math.floor(Math.random() * myImages2.length);
-    if (rnd2 == 0) {
-            rnd2 = 1;
-    }
-     document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd1] + '">');
-     document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd2] + '">');
-}
-    var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", "Lose", "$1000000", "Lose", "$350", "$5", "$99"];
+	  
+	      var options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", "Lose", "$1000000", "Lose", "$350", "$5", "$99"];
 
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
@@ -237,6 +192,52 @@ function easeOut(t, b, c, d) {
 }
 
 drawRouletteWheel();
+    
+    function getNames(){
+     document.getElementById("player1").innerHTML =
+              document.getElementById("name-box1").value;
+      document.getElementById("player2").innerHTML =
+              document.getElementById("name-box2").value;
+	        var myImages1 = new Array();
+    myImages1[1] = "https://www.the-random-generator.com/img/rock.jpg";
+    myImages1[2] = "https://www.the-random-generator.com/img/paper.jpg";
+    myImages1[3] = "https://www.the-random-generator.com/img/scissors.jpg";
+    var rnd1 = Math.floor(Math.random() * myImages1.length);
+    if (rnd1 == 0) {
+            rnd1 = 1;
+    }
+  var myImages2 = new Array();
+    myImages2[1] = "https://www.the-random-generator.com/img/rock.jpg";
+    myImages2[2] = "https://www.the-random-generator.com/img/paper.jpg";
+    myImages2[3] = "https://www.the-random-generator.com/img/scissors.jpg";
+    var rnd2 = Math.floor(Math.random() * myImages2.length);
+    if (rnd2 == 0) {
+            rnd2 = 1;
+    }
+     document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd1] + '">');
+     document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd2] + '">');
+    }
+
+function startGame() {
+    var myImages1 = new Array();
+    myImages1[1] = "https://www.the-random-generator.com/img/rock.jpg";
+    myImages1[2] = "https://www.the-random-generator.com/img/paper.jpg";
+    myImages1[3] = "https://www.the-random-generator.com/img/scissors.jpg";
+    var rnd1 = Math.floor(Math.random() * myImages1.length);
+    if (rnd1 == 0) {
+            rnd1 = 1;
+    }
+  var myImages2 = new Array();
+    myImages2[1] = "https://www.the-random-generator.com/img/rock.jpg";
+    myImages2[2] = "https://www.the-random-generator.com/img/paper.jpg";
+    myImages2[3] = "https://www.the-random-generator.com/img/scissors.jpg";
+    var rnd2 = Math.floor(Math.random() * myImages2.length);
+    if (rnd2 == 0) {
+            rnd2 = 1;
+    }
+     document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd1] + '">');
+     document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd2] + '">');
+}
   </script>
 
 </head>
