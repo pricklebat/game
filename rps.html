@@ -212,15 +212,6 @@ function startGame() {
     document.getElementById('team2Leader').innerHTML = randomLine2;
  }
 
- function leaderSelectB() {
-    const input = document.getElementById('team2').value;
-    const lines2 = input.split('\n');
-    const randomLine2 = lines2[Math.floor(Math.random() * lines2.length)];
-    
-    //Display your line
-    document.getElementById('team2Leader').innerHTML = randomLine2;
- }
-  </script>
 
 </head>
 
@@ -255,7 +246,7 @@ function startGame() {
 			<textarea id="team1" name="team1" rows="8" cols="15"></textarea>
 			<textarea class="team2" name="team2" rows="8" cols="15"></textarea>
 			<button id="makeTeamA" onclick="leaderSelectA()">Make Teams</button>
-			<button id="makeTeamB" onclick="leaderSelectB()">Make Teams</button>
+			<button id="makeTeamB" onclick="leaderSelectB()">nothing</button>
 			<button id="switch" onclick="switchScores()">Switch</button>
 			<button id="bombA" onclick="bombATeam()">Bomb</button>
 			<button id="bombB" onclick="bombATeam()">Bomb</button>
