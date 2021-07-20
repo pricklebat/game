@@ -57,7 +57,7 @@ gap: 10px;
   grid-row: 1;
 	  }
 	  
-.team1 {
+#team1 {
   grid-column: 1;
   grid-row: 2;
 	  }
@@ -134,8 +134,6 @@ width: 700px;
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
-<script src=
-"https://code.jquery.com/jquery-1.12.4.min.js">
         </script>
     
     function getNames(){
@@ -183,12 +181,15 @@ function startGame() {
      document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd1] + '">');
      document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd2] + '">');
 }
-	$(document).ready(function () {
-            $("#makeTeams").click(function () {
-                var txt = $(".team1").val();
-                alert(txt);
-            });
-        });
+function leaderSelect() {
+    const input = document.getElementById('team1').value;
+    const lines = input.split('\n');
+    const randomLeader1 = lines[Math.floor(Math.random() * lines.length)];
+    const randomLeader2 = lines[Math.floor(Math.random() * lines.length)];
+    
+    document.getElementById('teamLeader1').innerHTML = randomLeader1;
+    document.getElementById('teamLeader2').innerHTML = randomLeader2;
+ }
   </script>
 
 </head>
@@ -218,14 +219,14 @@ function startGame() {
 	<div id="spinGame">
 		<div class="scoreChart">
 			<p class="team1Score"><span class="score1">0</span><br>
-			<span class="team1Leader">Team A</span></p>
+			<span id="team1Leader">Team A</span></p>
 			<p class="team2Score"><span class="score2">0</span><br>
-			<span class="team2Leader">Team B</span></p>
-			<textarea class="team1" name="team1" rows="8" cols="15">
+			<span id="team2Leader">Team B</span></p>
+			<textarea id="team1" name="team1" rows="8" cols="15">
 			</textarea>
 			<textarea class="team2" name="team2" rows="8" cols="15">
 			</textarea>
-			<button id="makeTeams">Make Teams</button>
+			<button id="makeTeams" onclick="leaderSelect()">Make Teams</button>
 		</div>
 		<div id="spinnerWheel">
 			<iframe src="https://wheeldecide.com/e.php?c1=2000&c2=half+your+points&c3=1500&c4=500&c5=-1000&c6=bomb+to+the+other+team&c7=1500&c8=5000&c9=copy+the+other+team%27s+points&c10=1000&c11=double+your+points&c12=-500&c13=switch&c14=1000&c15=bomb&t=Points&time=5" width="500" height="500" scrolling="no" frameborder="0"></iframe>
