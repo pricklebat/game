@@ -39,10 +39,31 @@ width: 1000px;
   	
 	margin: auto;
 }
-#scoreChart {
+.scoreChart {
     float:left; /* add this */
   display: inline-grid;
 }
+	 
+.team1Score {
+  grid-column: 1;
+  grid-row: 1;
+	  }
+	  
+.team1 {
+  grid-column: 1;
+  grid-row: 2;
+	  }
+	  
+.team2Score {
+  grid-column: 2;
+  grid-row: 1;
+	  }
+	  
+.team2 {
+  grid-column: 2;
+  grid-row: 2;
+	  }
+	  
 #spinnerWheel {
     float:right;
 }
@@ -173,19 +194,19 @@ function startGame() {
 </div>
 </div><br>
 	<div id="spinGame">
-		<div id="scoreChart">
-<p id="team1Score">0</p>
-<p id="team2Score">0</p>
-<textarea id="team1" name="team1" rows="8" cols="15">
-Team A
-</textarea>
-<textarea id="team2" name="team2" rows="8" cols="15">
-Team B
-</textarea>
-</div>
-<div id="spinnerWheel">
-<iframe src="https://wheeldecide.com/e.php?c1=2000&c2=half+your+points&c3=1500&c4=500&c5=-1000&c6=bomb+to+the+other+team&c7=1500&c8=5000&c9=copy+the+other+team%27s+points&c10=1000&c11=double+your+points&c12=-500&c13=switch&c14=1000&c15=bomb&t=Points&time=5" width="500" height="500" scrolling="no" frameborder="0"></iframe>
-</div>
+		<div class="scoreChart">
+			<p class="team1Score">0</p>
+			<p class="team2Score">0</p>
+			<textarea class="team1" name="team1" rows="8" cols="15">
+			Team A
+			</textarea>
+			<textarea class="team2" name="team2" rows="8" cols="15">
+			Team B
+			</textarea>
+		</div>
+		<div id="spinnerWheel">
+			<iframe src="https://wheeldecide.com/e.php?c1=2000&c2=half+your+points&c3=1500&c4=500&c5=-1000&c6=bomb+to+the+other+team&c7=1500&c8=5000&c9=copy+the+other+team%27s+points&c10=1000&c11=double+your+points&c12=-500&c13=switch&c14=1000&c15=bomb&t=Points&time=5" width="500" height="500" scrolling="no" frameborder="0"></iframe>
+		</div>
 	</div>
   <!-- your content here... -->
   <script src="js/scripts.js"></script>
