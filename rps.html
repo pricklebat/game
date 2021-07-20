@@ -51,14 +51,9 @@ gap: 10px;
   grid-row: 1;
 	  }
 	  
-.team1Leader {
-  grid-column: 1;
-  grid-row: 2;
-	  }
-	  
 .team1 {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 2;
 	  }
 	  
 .team2Score {
@@ -66,15 +61,11 @@ gap: 10px;
   grid-row: 1;
 	  }
 	  
-.team2Leader {
+.team2 {
   grid-column: 2;
   grid-row: 2;
 	  }
 	  
-.team2 {
-  grid-column: 2;
-  grid-row: 3;
-	  }
 	  
 #spinnerWheel {
     float:right;
@@ -207,10 +198,10 @@ function startGame() {
 </div><br>
 	<div id="spinGame">
 		<div class="scoreChart">
-			<p class="team1Score">0</p>
-			<p class="team1Leader">Team A</p>
-			<p class="team2Score">0</p>
-			<p class="team2Leader">Team B</p>
+			<p class="team1Score"><span class="score1">0</span>
+			<span class="team1Leader">Team A</span></p>
+			<p class="team2Score"><span class="score2">0</span>
+			<span class="team2Leader">Team B</span></p>
 			<textarea class="team1" name="team1" rows="8" cols="15">
 			</textarea>
 			<textarea class="team2" name="team2" rows="8" cols="15">
