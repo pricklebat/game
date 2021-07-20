@@ -183,6 +183,12 @@ function startGame() {
      document.getElementById("hand1").innerHTML = ('<img class="who" src="' + myImages1[rnd1] + '">');
      document.getElementById("hand2").innerHTML = ('<img class="who" src="' + myImages2[rnd2] + '">');
 }
+	$(document).ready(function () {
+            $("#makeTeams").click(function () {
+                var txt = $(".team1").val();
+                alert(txt);
+            });
+        });
   </script>
 
 </head>
