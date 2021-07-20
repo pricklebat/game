@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
           .studentNames {
         font-size: 20px;
@@ -222,10 +223,8 @@ function leaderSelect() {
 			<span id="team1Leader">Team A</span></p>
 			<p class="team2Score"><span class="score2">0</span><br>
 			<span id="team2Leader">Team B</span></p>
-			<textarea id="team1" name="team1" rows="8" cols="15">
-			</textarea>
-			<textarea class="team2" name="team2" rows="8" cols="15">
-			</textarea>
+			<textarea id="team1" name="team1" rows="8" cols="15"></textarea>
+			<textarea class="team2" name="team2" rows="8" cols="15"></textarea>
 			<button id="makeTeams" onclick="leaderSelect()">Make Teams</button>
 		</div>
 		<div id="spinnerWheel">
