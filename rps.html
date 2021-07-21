@@ -54,7 +54,7 @@ grid-template-columns: 75px 75px 75px 75px;
 	" 1kA		hfA		1kB		hfB "
 	" 15A		neg5A		15B		neg5B "
 	" 2kA		neg1kA		2kB		neg1kB "
-	" 5kA		.		5kB 		.	 "
+	" 5kA		rst		5kB 		.	 "
 }
 	 
 .team1Score {
@@ -161,7 +161,11 @@ grid-template-columns: 75px 75px 75px 75px;
 	  
    #neg1000B {
   grid-area: neg1kB;
-	  }	
+	  }
+	  
+   #resetAll {
+  grid-area: rst;
+	  }
 	  
 #spinnerWheel {
    grid-column: 2;
@@ -328,6 +332,7 @@ function startGame() {
 			<button id="neg500B" onclick="neg500BTeam()">-500</button>
 			<button id="neg1000A" onclick="neg1000ATeam()">-1000</button>
 			<button id="neg1000B" onclick="neg1000BTeam()">-1000</button>
+			<button id="resetAll" onclick="reset()">Reset</button>
 		</div>
 		<div id="spinnerWheel">
 			<iframe src="https://wheeldecide.com/e.php?c1=2000&c2=half+your+points&c3=1500&c4=500&c5=-1000&c6=bomb+to+the+other+team&c7=1500&c8=5000&c9=copy+the+other+team%27s+points&c10=1000&c11=double+your+points&c12=-500&c13=switch&c14=1000&c15=bomb&t=Points&time=5" width="500" height="500" scrolling="no" frameborder="0"></iframe>
