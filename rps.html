@@ -62,34 +62,6 @@ width: 500px;
 	line-height: 120%;
 	resize: none;
 	  }
-	
-	  .who1{
-	height: 100px;
-	width: 100px;
-	padding: 5px;
-transition: transform 0.2s linear;
-  transform-origin: top left;
-  transform-style: preserve-3D;
-  transform:scale(0.1);
-	  }
-	  
-	.who1-scale {
-  transform:scale(1.0);
-}
-	  
-	  .who2{
-	height: 100px;
-	width: 100px;
-	padding: 5px;
-	  transition: transform 0.2s linear;
-  transform-origin: top right;
-  transform-style: preserve-3D;
-  transform:scale(0.1);
-	  }
-	  
-	.who2-scale {
-  transform:scale(1.0);
-}
 	  
 	button {
 	margin: auto;
@@ -260,8 +232,8 @@ width: 250px;
 		  
 	$('#b1').click(function () {
 
-  $('.who1').toggleClass('who1-scale');
-  $('.who2').toggleClass('who2-scale');
+  $('.who1').effect( "shake" );
+  $('.who2').effect( "shake" );
 
 });
 	  
