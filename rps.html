@@ -33,7 +33,17 @@
         font-family: 'Tahoma', sans-serif;
         text-align: center;
         color: gray;
-	margin-top: -20px;
+	 border: 1px solid black;
+    overflow: hidden; /* add this to contain floated children */
+	
+width: 700px;
+	height: 250px;	
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
 	  }
 	  
 	textarea { 
@@ -246,6 +256,13 @@ width: 700px;
 #two {
     float:right;
 }
+	  
+#question {
+    float:left; /* add this */
+}
+#ezslots1 {
+    float:right;
+}
 
 	  
   </style>
@@ -359,9 +376,9 @@ function startGame() {
         <input type="text" name="name2" id="name-box2" value="Name 2" style="border-width: 2px;" ><br>
           </form>
             <input type="submit" onclick="getNames();" id="b1"><br/>
-	<div id="ezslots1"></div>
-<button id="gogogo1">spin</button>
 </div>
+<div id="ezslots1"></div>
+<button id="gogogo1">spin</button>
   </div>
  <div id="game">
   <div class="playerOne" id="one">
