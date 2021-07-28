@@ -56,17 +56,28 @@ width: 500px;
 	margin: auto;
 	  }
 	  
-	.who1 {
+	#who1 {
 	width: 100px;
 	height: 100px:;
 	padding: 5px;
+	  opacity: 1;
+ 	 transition: opacity 1s; 
 	  }
 	  
-	.who2 {
+	#who2 {
 	width: 100px;
 	height: 100px:;
 	padding: 5px;
+	  opacity: 1;
+ 	 transition: opacity 1s; 
 	  }
+	  
+	  #who1.fade {
+  opacity: 0;
+}
+	  #who2.fade {
+  opacity: 0;
+}
 	  
 	textarea { 
 	font-size: 20px;
@@ -165,6 +176,7 @@ width: 250px;
 #slotsGame {
     float:right;
 }
+	  
 
 	  
   </style>
@@ -208,10 +220,15 @@ width: 250px;
     if (rnd2 == 0) {
             rnd2 = 1;
     }
-     document.getElementById("hand1").innerHTML = ('<img class="who1" src="' + myImages1[rnd1] + '">');
-     document.getElementById("hand2").innerHTML = ('<img class="who2" src="' + myImages2[rnd2] + '">');
+     document.getElementById("hand1").innerHTML = ('<img id="who1" src="' + myImages1[rnd1] + '">');
+     document.getElementById("hand2").innerHTML = ('<img id="who2" src="' + myImages2[rnd2] + '">'); 
     }
 
+var slideSource = document.getElementById('slideSource');
+
+document.getElementById('handle').onclick = function () {
+  slideSource.classList.toggle('fade');
+}
 
  function leaderSelectA() {
     const input = document.getElementById('team1').value;
@@ -242,9 +259,14 @@ width: 250px;
 	$("#gogogo1").click(function(){ console.log(ezslot1.spin());});
 		  });
 	  
-	  $("#b1").click(function(){
-  $(".who1").fadeIn();
-  $(".who2").fadeIn();
+	 $('#who1').hide();
+	onImgLoad('#who1', function(){
+   	 $(this).fadeIn(700);
+});
+	  
+	 $('#who2').hide();
+	onImgLoad('#who2', function(){
+   	 $(this).fadeIn(700);
 });
 	  
   </script>
