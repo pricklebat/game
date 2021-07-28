@@ -67,13 +67,29 @@ width: 500px;
 	height: 100px;
 	width: 100px;
 	padding: 5px;
+transition: transform 0.2s linear;
+  transform-origin: top left;
+  transform-style: preserve-3D;
+  transform:scale(0.1);
 	  }
+	  
+	.who1-scale {
+  transform:scale(1.0);
+}
 	  
 	  .who2{
 	height: 100px;
 	width: 100px;
 	padding: 5px;
+	  transition: transform 0.2s linear;
+  transform-origin: top right;
+  transform-style: preserve-3D;
+  transform:scale(0.1);
 	  }
+	  
+	.who2-scale {
+  transform:scale(1.0);
+}
 	  
 	button {
 	margin: auto;
@@ -132,12 +148,6 @@ gap: 10px;
   grid-column: 1;
   grid-row: 3;
 	  }
-   
-	  
-#spinnerWheel {
-   grid-column: 2;
-  grid-row: 1;
-}
 	  
 	    #teams {
 margin-top:0;
@@ -248,6 +258,13 @@ width: 250px;
 	$("#gogogo1").click(function(){ console.log(ezslot1.spin());});
 		  });
 		  
+	$('#b1').click(function () {
+
+  $('.who1').toggleClass('who1-scale');
+  $('.who2').toggleClass('who2-scale');
+
+});
+	  
   </script>
 
 </head>
@@ -288,9 +305,6 @@ width: 250px;
 			<textarea id="team1" name="team1" rows="8" cols="15"></textarea>
 			<textarea class="team2" name="team2" rows="8" cols="15"></textarea>
 			<button id="makeTeamA" onclick="leaderSelectA()">Leaders</button>
-		</div>
-		<div id="spinnerWheel">
-			<iframe src="https://wheeldecide.com/e.php?c1=2000&c2=half+your+points&c3=1500&c4=500&c5=-1000&c6=bomb+to+the+other+team&c7=1500&c8=5000&c9=copy+the+other+team%27s+points&c10=1000&c11=double+your+points&c12=-500&c13=switch&c14=1000&c15=bomb&c16=2000&c17=1500&c18=500&c19=1500&c20=1000&c21=switch&c22=1000&c23=1000&t=Points&time=5" width="500" height="500" scrolling="no" frameborder="0"></iframe>
 		</div>
 	</div> -->
   <!-- your content here... -->
