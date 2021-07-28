@@ -60,7 +60,6 @@ body{
 <div id="ezslots0"></div>
 <button id="gogogo0">spin</button>
 
-	<!--
 <h1>simple numbers with winning set</h1>
 <div id="ezslots1"></div>
 <button id="gogogo1">spin</button>
@@ -80,7 +79,6 @@ body{
 <div id="ezslots3"></div>
 <button id="gogogo3">spin</button>
 <button id="winwinwin3">win</button>
--->
 
 
 <script>
@@ -89,14 +87,14 @@ $(function(){
 	//setting up some sample set sof things we can make a slot machine of
 	var numbers = ['0','1','2','3','4','5','6','7','8','9'];
 	var images = ['<img src="images/seven.png">','<img src="images/banana.png">','<img src="images/cherries.png">','<img src="images/lemon.png">','<img src="images/orange.png">','<img src="images/plum.png">','<img src="images/watermelon.png">'];
-	var misc = ['1000','2000','5000','500','bomb','switch'];
+	var misc = ['!','K','*','#','@','$'];
 	var callbackFunction = function(result){
 		alert(JSON.stringify(result));
 	}
 
 
 	//all parameters except id are optional
-	var ezslot0 = new EZSlots("ezslots0"{"reelCount":1, "height":126, "width":400, "symbols":misc});
+	var ezslot0 = new EZSlots("ezslots0");
 	//simple numbers based one
 	var ezslot1 = new EZSlots("ezslots1",{"reelCount":3,"startingSet":[0,0,0],"winningSet":[7,7,7],"symbols":numbers,"height":126,"width":126});
 	//using images instead, and more reels
@@ -108,14 +106,14 @@ $(function(){
 
 
 	$("#gogogo0").click(function(){ console.log(ezslot0.spin());});
-/*	$("#gogogo1").click(function(){ console.log(ezslot1.spin());});
+	$("#gogogo1").click(function(){ console.log(ezslot1.spin());});
 	$("#winwinwin1").click(function(){ console.log(ezslot1.win())});
 	$("#gogogo2").click(function(){ console.log(ezslot2.spin());});
 	$("#winwinwin2").click(function(){ console.log(ezslot2.win())});
 	$("#gogogo3").click(function(){ console.log(ezslot3.spin());});
 	$("#winwinwin3").click(function(){ console.log(ezslot3.win())});
 	$("#gogogo4").click(function(){ console.log(ezslot4.spin());});
-	$("#winwinwin4").click(function(){ console.log(ezslot4.win())}); */
+	$("#winwinwin4").click(function(){ console.log(ezslot4.win())});
 });
 
 </script>
