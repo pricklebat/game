@@ -36,8 +36,8 @@
 	 border: 1px solid black;
     overflow: hidden; /* add this to contain floated children */
 	
-width: 700px;
-	height: 250px;	
+width: 400px;
+	height: 150px;	
 	top:0;
 	bottom: 0;
 	left: 0;
@@ -260,7 +260,7 @@ width: 700px;
 #question {
     float:left; /* add this */
 }
-#ezslots1 {
+#slotsGame {
     float:right;
 }
 
@@ -375,9 +375,11 @@ function startGame() {
         <input type="text" name="name1" id="name-box1" value="Name 1" style="border-width: 2px;" ><br>
         <input type="text" name="name2" id="name-box2" value="Name 2" style="border-width: 2px;" ><br>
           </form>
-		<input type="submit" onclick="getNames();" id="b1"></div><br/>
+		<input type="submit" onclick="getNames();" id="b1"></div>
+<div id="slotsGame">
 <div id="ezslots1"></div>
 <button id="gogogo1">spin</button>
+	  </div>
 </div>
   </div>
  <div id="game">
