@@ -48,16 +48,9 @@
         font-family: 'Tahoma', sans-serif;
         text-align: center;
         color: gray;
-    overflow: hidden; /* add this to contain floated children */
-	
-width: 500px;
+        width: 500px;
 	height: 170px;	
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-  	
-	margin: auto;
+	margin: 0 auto;
 	  }
 	  
 	.who1 {
@@ -275,12 +268,13 @@ margin-left:auto;
   <h1 style="text-align:center; font-family:'Tahoma', sans-serif;">Rock Paper Scissors</h1>
 <div id="rpsGame">
   <div class="studentNames">
-        <div id="question"><p>Student Names</p>
+      <!--  <div id="question"><p>Student Names</p>
           <form>
         <input type="text" name="name1" id="name-box1" value="Name 1" style="border-width: 2px;" ><br>
         <input type="text" name="name2" id="name-box2" value="Name 2" style="border-width: 2px;" ><br>
           </form>
-		<input type="submit" onclick="getNames();" id="b1"></div>
+		<input type="submit" onclick="getNames();" id="b1"></div> -->
+	  
 <div id="slotsGame">
 <div id="ezslots1"></div>
 <button id="gogogo1">spin</button>
@@ -304,13 +298,14 @@ margin-left:auto;
 
 	<div id="spinGame">
 		<div class="scoreChart">
-			<p id="team1Score"><span id="score1">0</span><br>
-			<span id="team1Leader">Team A</span></p>
-			<p id="team2Score"><span id="score2">0</span><br>
-			<span id="team2Leader">Team B</span></p>
-			<textarea id="team1" name="team1" rows="8" cols="15"></textarea>
+			<input type="text" id="redScore" value=0 readonly><br>
+			<input type="text" id="blueScore" value=0 readonly><br>
+			<textarea id="team1" name="team1" rows="10" cols="15">Put Students who
+			want to be leaders
+			in here and click
+			the button below!</textarea>
 			<textarea class="team2" name="team2" rows="8" cols="15"></textarea>
-			<button id="makeTeamA" onclick="leaderSelectA()">Leaders</button>
+			<button id="teamLeader" onclick="leaderSelect()">Choose Leaders</button>
 		</div>
 	</div>
   <!-- your content here... -->
