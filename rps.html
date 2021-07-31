@@ -113,7 +113,7 @@
   grid-row: 1;
 	  }
 	  
-#team2 {
+.team2 {
   grid-column: 2;
   grid-row: 2;
 	  }
@@ -230,8 +230,8 @@ grid-area: spin;
     const randomLine2 = lines2[Math.floor(Math.random() * lines2.length)];
     
     //Display your line
-    document.getElementById('team1').innerHTML = randomLine1;
-    document.getElementById('team2').innerHTML = randomLine2;
+    document.getElementById('team1').value = randomLine1;
+    document.getElementById('team2').value = randomLine2;
  }
 
 	  
@@ -289,7 +289,7 @@ grid-area: spin;
 			<input type="text" id="redScore" value=0 readonly><br>
 			<input type="text" id="blueScore" value=0 readonly><br>
 			<textarea id="team1" name="team1" rows="10" cols="15">Write the names of students in here and click the button below!</textarea>
-			<textarea id="team2" name="team2" rows="8" cols="15"></textarea>
+			<textarea class="team2" name="team2" rows="8" cols="15"></textarea>
 			<button id="teamLeader" onclick="leaderSelect()">Leaders</button>
 			<button id="clearBtn" onclick="clearAll()">Reset Game</button>
 		</div>
