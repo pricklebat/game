@@ -21,16 +21,6 @@
 		   "ldrBtn clrBtn redBtn blueBtn"
 	  }
 	  
-	  .button {
-	border: none;
- 	 color: white;
- 	 padding: 15px 32px;
-	  text-align: center;
- 	 text-decoration: none;
- 	 display: inline-block;
-	  font-size: 16px;;
-	  }
-	  
 	  .window {
 	font-size:40px;
 	font-family:arial,helvetica,sans-serif;	
@@ -154,22 +144,22 @@ margin-left:auto;
 	  }
 #handGame {
     border: 1px solid black;
-    overflow: hidden; /* add this to contain floated children */
-	
-width: 250px;
-	height: 130px;	
+    display: inline-grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "one two";
 	top:0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-  	
 	margin: auto;
 }
 #one {
-    float:left; /* add this */
+  grid-area: one;
 }
 #two {
-    float:right;
+  grid-area: two;
 }
 	  
 #question {
