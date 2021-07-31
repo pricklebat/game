@@ -230,8 +230,13 @@ grid-area: spin;
     const randomLine2 = lines2[Math.floor(Math.random() * lines2.length)];
     
     //Display your line
+	 if ( randomLine1 !== randomLine2 ) {
     document.getElementById('team1').value = randomLine1;
     document.getElementById('team2').value = randomLine2;
+ } else {
+   leaderSelect();
+   return;
+ }
  }
 
 	  
