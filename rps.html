@@ -7,10 +7,13 @@
 <script src="jquery.easing.1.3.js"></script>
 <script src="ezslots.js"></script>
   <style>
+	  .centering
+	  (
+	width: 100%;
+        margin: 0 auto;
+	  )
 	  
 	  .container { 
-		 width: 80%;
-       		 margin: 0 auto;
 		      border: 1px solid black;
 		 display: inline-grid;
  		 grid-auto-columns: 1fr;
@@ -257,6 +260,7 @@ grid-area: spin;
 
 <body>
   <h1 style="text-align:center; font-family:'Tahoma', sans-serif;">Max T's Score Keeper</h1>
+<div class="centering">	
 <div class="container">
 <div id="rpsGame">
   <div class="studentNames">
@@ -298,6 +302,7 @@ grid-area: spin;
 			<button id="clearBtn" onclick="clearAll()">Reset Game</button>
 		</div>
 	</div>
+</div>	
   <!-- your content here... -->
   <script src="js/scripts.js"></script>
 </body>
