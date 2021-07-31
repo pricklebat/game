@@ -165,7 +165,8 @@ margin-left:auto;
 
   #rpsSctn {
 	border: 1px solid black;
-	display: inline-grid;
+	display: flex;
+ 	align-items:center;
 	grid-template-columns: 250px;
         grid-template-rows: 130px 20px;
 	grid-template-areas: 
@@ -174,10 +175,8 @@ margin-left:auto;
 	  }
 
 #rpsButton {
-  margin-top: 3px;
-  display: inline-block;
   grid-area: hndB;
-  place-self:center;
+  flex: 1;
 }
 	 
 #question {
