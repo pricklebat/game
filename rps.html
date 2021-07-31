@@ -9,16 +9,12 @@
   <style>
 	  
 	  .container { 
-		 display: grid;
- 		 grid-template-columns: 125px;
-		 grid-template-rows: 65px;
+		 display: inline-grid;
+ 		 grid-template-columns: auto;
+		 grid-template-rows: auto;
 		 grid-template-areas: 
-  		  "scoreOne scoreTwo rps rps"
-		   "teamOne teamTwo rps rps"
-		   "teamOne teamTwo rpsBtn rpsBtn"
-		   "teamOne teamTwo spin spin
-		   "teamOne teamTwo spin
-		   "ldrBtn clrBtn redBtn blueBtn"
+  		   "chart rps"
+		   "chart spin"
 	  }
 	  
 	  .window {
@@ -100,17 +96,12 @@
 	margin-bottom: -5px;
 	  }
 	  
-#spinGame {
-  display: inline-grid;
-margin: auto;
-width: auto;
-}
-	  
 .scoreChart {
   grid-column: auto;
   grid-row: auto;
   display: grid;
 gap: 10px;
+  grid-area: chart;
 }
 	 
 #redScore {
@@ -169,6 +160,7 @@ margin-left:auto;
 }
 
   #rpsSctn {
+	grid-area: rps;
 	display: inline-grid;
  	align-items:center;
 	grid-template-columns: 250px;
@@ -185,6 +177,7 @@ margin-left:auto;
 }
 	  
 #slotsGame {
+grid-area: spin;
 }
 
 	  
