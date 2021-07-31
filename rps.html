@@ -239,35 +239,19 @@ grid-area: spin;
  }
  }
 
+	  
 	  $(function(){
 	//setting up some sample set sof things we can make a slot machine of
 	var numbers = ['500','1000','1500','2000','5000','switch','match','500','OT bomb','-500','1000','1500', 'x2', '÷2'];
 	var callbackFunction = function(result){
-		var result = JSON.stringify(result);
-		return result;
+		$('#redScore').val(JSON.stringify(result));
 	}
 	
-	
-	var ezslot1 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0,0,0], "symbols":numbers,"height":130,"width":250, "callback":callbackFunction});
+	var ezslot1 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0,0,0],"winningSet":[7,7,7],"symbols":numbers,"height":130,"width":250});
 	 
-	$("#redSpin").click(function(){
-	    $.when(console.log(ezslot1.spin()).then(redScUpdate());
-	    
-	});
-		  
-	$("#blueSpin").click(function(){
-            $.when(console.log(ezslot1.spin()).then(blueScUpdate());
-	});
+	$("#redSpin").click(function(){ console.log(ezslot1.spin());});
+	$("#blueSpin").click(function(){ console.log(ezslot1.spin());});
 		  });
-	  
-	 function redScUpdate(){
-	 document.getElementById('redScore').value = result;
-	 }
-	  
-	 function blueScUpdate(){
-	  document.getElementById('blueScore').value = result; 
-	  }
-	  
 	  
   </script>
 
