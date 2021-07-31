@@ -249,7 +249,8 @@ grid-area: spin;
 	
 	var ezslot1 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0,0,0],"winningSet":[7,7,7],"symbols":numbers,"height":130,"width":250});
 	 
-	$("#gogogo1").click(function(){ console.log(ezslot1.spin());});
+	$("#redSpin").click(function(){ console.log(ezslot1.spin());});
+	$("#blueSpin").click(function(){ console.log(ezslot1.spin());});
 		  });
 	  
   </script>
@@ -270,8 +271,8 @@ grid-area: spin;
 	  
 <div id="slotsGame">
 <div id="ezslots1"></div>
-<button id="gogogo1">Spin for Red</button>
-<button id="gogogo1">Spin for Blue</button>
+<button id="redSpin">Spin for Red</button>
+<button id="blueSpin">Spin for Blue</button>
 	  </div>
 </div>
   </div>
