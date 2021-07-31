@@ -152,7 +152,9 @@ margin-left:auto;
     grid-template-areas: 
     "one two";
      width: 250px;
+     grid-area: hndG;
 }
+	  
 #one {
   grid-area: one;
 }
@@ -161,11 +163,18 @@ margin-left:auto;
 }
 
   rpsSctn {
+	border: 1px solid black;
 	display: inline-grid;
-	width: 250px;
-	margin: 0 auto;
+	grid-template-columns: 250px;
+        grid-template-rows: auto;
+	grid-template-areas: 
+	"hndG"
+     	"hndB";
 	  }
-	  
+
+#rpsButton {
+  grid-area: hndB;
+}
 	 
 #question {
     float:left; /* add this */
