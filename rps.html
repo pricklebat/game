@@ -224,8 +224,9 @@ grid-area: spin;
 
  function leaderSelect() {
     const input = document.getElementById('team1').value;
+    const input2 = document.getElementById('team1').value;
     const lines1 = input.split('\n');
-    const lines2 = input.split('\n');
+    const lines2 = input2.split('\n');
     const randomLine1 = lines1[Math.floor(Math.random() * lines1.length)];
     const randomLine2 = lines2[Math.floor(Math.random() * lines2.length)];
     
