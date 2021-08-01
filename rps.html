@@ -244,11 +244,8 @@ grid-area: spin;
 	//setting up some sample set sof things we can make a slot machine of
 	var numbers = ['500','1000','1500','2000','5000','switch','match','500','OT bomb','-500','1000','1500', 'x2', '÷2'];
 	var callbackFunction = function(result){
-		$("button").click(function() {
-   		var fired_button = $(this).val();
 		var redScEdit = parseInt(document.getElementById('redScore').value);
 		var blueScEdit = parseInt(document.getElementById('blueScore').value);
-		if (firedbutton === "red"){
 		var redVal = JSON.parse(result);
 		switch (redVal) {
 		case 0:
@@ -299,8 +296,8 @@ grid-area: spin;
 		default:
 		document.getElementById("redScore").value = "not it";
 		}
-		else {
-		var blueVal = JSON.parse(result);
+
+	/*	var blueVal = JSON.parse(result);
 		switch (blueVal) {
 		case 0:
 		case 7:
@@ -349,9 +346,9 @@ grid-area: spin;
 			break;
 		default:
 		document.getElementById("blueScore").value = "not it";
-		}
-		}
-	});
+		
+		} */
+
 	}
 	
 	var ezslot1 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0],"symbols":numbers,"height":130,"width":250, "callback":callbackFunction});
