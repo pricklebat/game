@@ -250,9 +250,11 @@ function nextMatch() {
 	var blueTeam = document.getElementById("team2").value;
 	var redLines = redTeam.split("\n");
 	var blueLines = blueTeam.split("\n");
+	const randomLines1 = redLines[Math.floor(Math.random() * redLines.length)];
+        const randomLines2 = blueLines[Math.floor(Math.random() * blueLines.length)];
 	
-    document.getElementById('player1').innerHTML = redLines;
-    document.getElementById('player2').innerHTML = blueLines;
+    document.getElementById('player1').innerHTML = randomLines1;
+    document.getElementById('player2').innerHTML = randomLines2;
  }
 
 	  
