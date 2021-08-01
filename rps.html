@@ -246,8 +246,13 @@ grid-area: spin;
  }
 
 function nextMatch() {
-    document.getElementById('player1').innerHTML = "P1";
-    document.getElementById('player2').innerHTML = "p2";
+	var redTeam = document.getElementById("team1");
+	var blueTeam = document.getElementById("team2");
+	var redLines = redTeam.split("\n");
+	var blueLines = blueTeam.split("\n");
+	
+    document.getElementById('player1').innerHTML = redLines;
+    document.getElementById('player2').innerHTML = blueLines;
  }
 
 	  
