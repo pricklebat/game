@@ -246,8 +246,8 @@ grid-area: spin;
  }
 
 function nextMatch() {
-	var redLines = $('team1').val().split('\n');
-	var blueLines = $('team2').val().split('\n');
+	var redLines = document.getElementById('team1').innerHTML.split('\n');
+	var blueLines = document.getElementById('team2').innerHTML.split('\n');
 	for(var i = 0;i < redLines.length;i++){
     document.getElementById('player1').innerHTML = redLines[i];
 }
