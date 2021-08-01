@@ -110,6 +110,10 @@
 	margin-bottom: -5px;
 	  }
 	  
+	#instructions {
+	 font-size: 12px;
+	  }
+	  
 .scoreChart {
   place-self: centre;
   grid-column: auto;
@@ -434,10 +438,12 @@ var i = 0;
 
 <body>
   <h1 style="text-align:center; font-family:'Tahoma', sans-serif;">Max T's Score Keeper</h1><br>
-<p>Put the names of students who want to be a leader into the left hand column, then press the leaders button. It will designate Red Team and Blue Team leaders.
-	 When the students have chosen who wants to be on their team, press the rock, paper, scissors button to start a game (keep going if it's a draw). Then when the student
+	<div id="instructionsBox">
+<p id="instuctions">Put the names of students who want to be a leader into the left hand column, then press the leaders button. It will designate Red Team and Blue Team leaders.
+	 When the students have chosen who wants to be on their team, press the Rock, Paper, Scissors! button to start a game (keep going if it's a draw). Then when the student
 		answers the question correctly, spin their team's wheel to give them points! After that, press the Next button to go on to the next pair of students.
 		At the end of class, press the Reset Game button to clear everything for the next class. </p><br>
+	<div>
 <div class="container">
 <div id="rpsGame">
   <div class="studentNames">
