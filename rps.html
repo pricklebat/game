@@ -64,17 +64,25 @@
 	#instructionsBox {
 		width: 100%;
       		margin: 0 auto;
+		display: grid;
+		  grid-template-columns: auto;
+ 		 grid-template-rows: auto;
+		grid-template-areas: 
+			"instBtn"
+			"inst";
 	  }
 	  
 	#instructions {
 	 	display: none;
       		margin: 0 auto;
 		width: 600px;
+		grid-area: inst;
 	  }
 	  
 	  #instBtn {
 		text-align: center;
       		margin: auto;
+		  grid-area: instBtn;
 	  }
 	  
 	.who1 {
