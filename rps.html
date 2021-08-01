@@ -296,9 +296,65 @@ grid-area: spin;
 		default:
 		document.getElementById("redScore").value = "not it";
 		}
+		
+		var callbackFunction2 = function(result){
+		var blueVal = JSON.parse(result);
+		var redScEdit = parseInt(document.getElementById('redScore').value);
+		var blueScEdit = parseInt(document.getElementById('blueScore').value);
+				switch (blueVal) {
+		case 0:
+		case 7:
+		var blueP500 = blueScEdit += 500;
+  		document.getElementById("blueScore").value = blueP500.toString();
+		break;
+		case 1:
+		case 10:
+		var blueP1000 = blueScEdit += 1000;
+  		document.getElementById("blueScore").value = blueP1000.toString();
+			break;
+		case 2:
+		case 11:
+		var blueP1500 = blueScEdit += 1500;
+  		document.getElementById("blueScore").value = blueP1500.toString();
+			break;
+		case 3:
+		var blueP2000 = blueScEdit += 1000;
+  		document.getElementById("blueScore").value = blueP2000.toString();
+			break;
+		case 4:
+		var blueP5000 = blueScEdit += 5000;
+  		document.getElementById("blueScore").value = blueP5000.toString();
+			break;
+		case 5:
+			document.getElementById("redScore").value = blueScEdit;
+			document.getElementById("blueScore").value = redScEdit;
+			break;
+		case 6:
+  			document.getElementById("blueScore").value = redScEdit;
+			break;
+		case 8:
+			document.getElementById("redScore").value = "0";
+			break;
+		case 9:
+		var blueN500 = blueScEdit -= 500;
+  		document.getElementById("blueScore").value = blueN500.toString();
+			break;
+		case 12:
+		var blueDbl = blueScEdit *= 2;
+  		document.getElementById("blueScore").value = blueDbl.toString();
+			break;
+		case 13:
+		var blueHlf = blueScEdit /= 2;
+  		document.getElementById("blueScore").value = blueHlf.toString();
+			break;
+		default:
+		document.getElementById("blueScore").value = "not it";
+		
+		} 
 	}
 	
 	var ezslot1 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0],"symbols":numbers,"height":130,"width":250, "callback":callbackFunction});
+	var ezslot2 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0],"symbols":numbers,"height":130,"width":250, "callback":callbackFunction2});
 	 
 	$("#redSpin").click(function(){ console.log(ezslot1.spin());});
 	$("#blueSpin").click(function(){ console.log(ezslot1.spin());});
