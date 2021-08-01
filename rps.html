@@ -250,10 +250,10 @@ function nextMatch() {
 	var blueTeam = document.getElementById("team2").value;
 	var redLines = redTeam.split("\n");
 	var blueLines = blueTeam.split("\n");
-	for(var i = 0;i < redLines.length;i++){
+	for(let i = 0;i < redLines.length;i++){
     document.getElementById('player1').innerHTML = redLines[i];
 }
-	for(var i = 0;i < blueLines.length;i++){
+	for(let i = 0;i < blueLines.length;i++){
     document.getElementById('player2').innerHTML = blueLines[i];
 }
 	
