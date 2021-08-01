@@ -246,16 +246,8 @@ grid-area: spin;
  }
 
 function nextMatch() {
-    const redTeam = document.getElementById('team1').value;
-    const blueTeam = document.getElementById('team2').value;
-    const inLine1 = redTeam.split('\n');
-    const inLine2 = blueTeam.split('\n');
-    const randomLines1 = inLine1[Math.floor(Math.random() * inLine1.length)];
-    const randomLines2 = inLine2[Math.floor(Math.random() * inLine2.length)];
-    
-    document.getElementById('player1').value = randomLines1;
-    document.getElementById('player2').value = randomLines2;
-
+    document.getElementById('player1').innerHTML = "P1";
+    document.getElementById('player2').innerHTML = "p2";
  }
 
 	  
