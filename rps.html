@@ -245,24 +245,25 @@ grid-area: spin;
 	var numbers = ['500','1000','1500','2000','5000','switch','match','500','OT bomb','-500','1000','1500', 'x2', '÷2'];
 	var callbackFunction = function(result){
 		var redVal = JSON.parse(result);
+		var redScEdit = 
 		switch (redVal) {
 		case 0:
 		case 7:
-  		document.getElementById("redScore").value = "500";
+  		+document.getElementById("redScore").value = 500;
 		break;
 		case 1:
 		case 10:
-			document.getElementById("redScore").value = "1000";
+			+document.getElementById("redScore").value = 1000;
 			break;
 		case 2:
 		case 11:
-  			document.getElementById("redScore").value = "1500";
+  			+document.getElementById("redScore").value = 1500;
 			break;
 		case 3:
-			document.getElementById("redScore").value = "2000";
+			+document.getElementById("redScore").value = 2000;
 			break;
 		case 4:
-  			document.getElementById("redScore").value = "5000";
+  			+document.getElementById("redScore").value = 5000;
 			break;
 		case 5:
 			document.getElementById("redScore").value = "switch";
@@ -274,7 +275,7 @@ grid-area: spin;
 			document.getElementById("redScore").value = "OT bomb";
 			break;
 		case 9:
-  			document.getElementById("redScore").value = "-500";
+  			+document.getElementById("redScore").value = -500;
 			break;
 		case 12:
 			document.getElementById("redScore").value = "x2";
