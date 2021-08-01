@@ -250,8 +250,8 @@ function nextMatch() {
     const blueTeam = document.getElementById('team2').value;
     const inLine1 = redTeam.split('\n');
     const inLine2 = blueTeam.split('\n');
-    const randomLine1 = lines1[Math.floor(Math.random() * lines1.length)];
-    const randomLine2 = lines2[Math.floor(Math.random() * lines2.length)];
+    const randomLine1 = inLine1[Math.floor(Math.random() * inLine1.length)];
+    const randomLine2 = inLine2[Math.floor(Math.random() * inLine2.length)];
     
     document.getElementById('player1').value = randomLine1;
     document.getElementById('player2').value = randomLine2;
