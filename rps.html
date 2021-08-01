@@ -244,9 +244,9 @@ grid-area: spin;
 	//setting up some sample set sof things we can make a slot machine of
 	var numbers = ['500','1000','1500','2000','5000','switch','match','500','OT bomb','-500','1000','1500', 'x2', '÷2'];
 	var callbackFunction = function(result){
+		var redVal = JSON.parse(result);
 		var redScEdit = parseInt(document.getElementById('redScore').value);
 		var blueScEdit = parseInt(document.getElementById('blueScore').value);
-		var redVal = JSON.parse(result);
 		switch (redVal) {
 		case 0:
 		case 7:
@@ -296,59 +296,6 @@ grid-area: spin;
 		default:
 		document.getElementById("redScore").value = "not it";
 		}
-
-	/*	var blueVal = JSON.parse(result);
-		switch (blueVal) {
-		case 0:
-		case 7:
-		var blueP500 = blueScEdit += 500;
-  		document.getElementById("blueScore").value = blueP500.toString();
-		break;
-		case 1:
-		case 10:
-		var blueP1000 = blueScEdit += 1000;
-  		document.getElementById("blueScore").value = blueP1000.toString();
-			break;
-		case 2:
-		case 11:
-		var blueP1500 = blueScEdit += 1500;
-  		document.getElementById("blueScore").value = blueP1500.toString();
-			break;
-		case 3:
-		var blueP2000 = blueScEdit += 1000;
-  		document.getElementById("blueScore").value = blueP2000.toString();
-			break;
-		case 4:
-		var blueP5000 = blueScEdit += 5000;
-  		document.getElementById("blueScore").value = blueP5000.toString();
-			break;
-		case 5:
-			document.getElementById("redScore").value = blueScEdit;
-			document.getElementById("blueScore").value = redScEdit;
-			break;
-		case 6:
-  			document.getElementById("blueScore").value = redScEdit;
-			break;
-		case 8:
-			document.getElementById("redScore").value = "0";
-			break;
-		case 9:
-		var blueN500 = blueScEdit -= 500;
-  		document.getElementById("blueScore").value = blueN500.toString();
-			break;
-		case 12:
-		var blueDbl = blueScEdit *= 2;
-  		document.getElementById("blueScore").value = blueDbl.toString();
-			break;
-		case 13:
-		var blueHlf = blueScEdit /= 2;
-  		document.getElementById("blueScore").value = blueHlf.toString();
-			break;
-		default:
-		document.getElementById("blueScore").value = "not it";
-		
-		} */
-
 	}
 	
 	var ezslot1 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0],"symbols":numbers,"height":130,"width":250, "callback":callbackFunction});
@@ -375,8 +322,8 @@ grid-area: spin;
 	  
 <div id="slotsGame">
 <div id="ezslots1"></div>
-<button id="redSpin" value="red">Spin for Red</button>
-<button id="blueSpin" value="blue">Spin for Blue</button>
+<button id="redSpin">Spin for Red</button>
+<button id="blueSpin">Spin for Blue</button>
 	  </div>
 </div>
   </div>
@@ -396,8 +343,8 @@ grid-area: spin;
 	<br>
 
 		<div class="scoreChart">
-			<input type="text" id="redScore" readonly><br>
-			<input type="text" id="blueScore" readonly><br>
+			<input type="text" id="redScore" value=0 readonly><br>
+			<input type="text" id="blueScore" value=0 readonly><br>
 			<textarea id="team1" name="team1" rows="10" cols="15">Write the names of students in here and click the button below!</textarea>
 			<textarea id="team2" name="team2" rows="8" cols="15"></textarea>
 			<button id="teamLeader" onclick="leaderSelect()">Leaders</button>
