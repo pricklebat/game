@@ -250,12 +250,14 @@ function nextMatch() {
 	var blueTeam = document.getElementById("team2").value;
 	var redLines = redTeam.split("\n");
 	var blueLines = blueTeam.split("\n");
-	for(let i = 0;i < redLines.length;i++){
-    document.getElementById('player1').innerHTML = redLines[i];
-}
-	for(let i = 0;i < blueLines.length;i++){
-    document.getElementById('player2').innerHTML = blueLines[i];
-}
+	for(let i = 0;i < redLines.length){
+    		document.getElementById('player1').innerHTML = redLines[i];
+		i++
+	}
+	for(let i = 0;i < blueLines.length){
+   		 document.getElementById('player2').innerHTML = blueLines[i];
+		i++
+	}
 	
    // document.getElementById('player1').innerHTML = randomLines1;
    // document.getElementById('player2').innerHTML = randomLines2;
