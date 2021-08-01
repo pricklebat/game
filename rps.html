@@ -249,11 +249,13 @@ grid-area: spin;
 		switch (redVal) {
 		case 0:
 		case 7:
-  		document.getElementById("redScore").value = redScEdit += 500;
+		var redP500 = redScEdit += 500;
+  		document.getElementById("redScore").value = redP500.toString();
 		break;
 		case 1:
 		case 10:
-			document.getElementById("redScore").value = redScEdit += 1000;
+		var redP1000 = redScEdit += 1000;
+  		document.getElementById("redScore").value = redP1000.toString();
 			break;
 		case 2:
 		case 11:
