@@ -202,6 +202,9 @@ grid-area: spin;
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script type="text/javascript">
+	  
+  var i = 0;
+	  
     function getNames(){
    /*  document.getElementById("player1").innerHTML =
               document.getElementById("name-box1").value;
@@ -245,10 +248,8 @@ grid-area: spin;
  }
  }
 
-var i = 0;
 	  
-function nextMatch() {
-	var i = 0;
+window.onLoad = function nextMatch() {
 	var redLines = document.getElementById('team1').value.split('\n');
 	var blueLines = document.getElementById('team2').value.split('\n');
 	if ( i < redLines.length){
@@ -256,7 +257,6 @@ function nextMatch() {
    	document.getElementById('player2').innerHTML = blueLines[i];
 	i++;
 	} else {
-	var i = 0;
 	nextMatch();
 	}
 	
