@@ -283,10 +283,6 @@ grid-area: spin;
   <script type="text/javascript">
 	  
     function getNames(){
-   /*  document.getElementById("player1").innerHTML =
-              document.getElementById("name-box1").value;
-      document.getElementById("player2").innerHTML =
-              document.getElementById("name-box2").value; */
 	        var myImages1 = new Array();
     myImages1[1] = "https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png";
     myImages1[2] = "https://res.cloudinary.com/itsellej/image/upload/v1533400143/rock-paper-scissors/paper.png";
@@ -331,6 +327,7 @@ var i = 0;
 	var redLines = document.getElementById('team1').value.split('\n');
 	var blueLines = document.getElementById('team2').value.split('\n');
 	if ( i < redLines.length){
+	getNames();
 	document.getElementById('player1').innerHTML = redLines[i];
    	document.getElementById('player2').innerHTML = blueLines[i];
 	i++;
