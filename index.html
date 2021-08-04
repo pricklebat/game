@@ -349,6 +349,13 @@ var i = 0;
 	  i = 0;
 	  }
 		  
+	  function bombRed() {
+	  document.getElementById("redScore").value = "0";
+	  }
+	  
+	  function bombBlue() {
+	  document.getElementById("blueScore").value = "0";
+	  }
 	  
 	  $(function(){
 	//setting up some sample set sof things we can make a slot machine of
@@ -528,6 +535,8 @@ var i = 0;
 			<textarea id="team2" name="team2" rows="8" cols="15"></textarea>
 			<button id="teamLeader" onclick="leaderSelect()">Leaders</button>
 			<button id="clearBtn" onclick="clearAll()">Reset Game</button>
+			<button id="redBomb" onclick="bombRed()">Bomb</button>
+			<button id="blueBomb" onclick="bombBlue()">Bomb</button>
 		</div>
 	</div>
   <!-- your content here... -->
