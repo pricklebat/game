@@ -212,6 +212,20 @@
   background-color: #5BB9B7;
   color: #F9F6F0;
 	  }
+	  
+ #redMinus {
+  grid-column: 1;
+  grid-row: 5;
+  background-color: #B95B5D;
+  color: #F9F6F0;
+	  }
+	  
+ #blueMinus {
+  grid-column: 2;
+  grid-row: 5;
+  background-color: #5BB9B7;
+  color: #F9F6F0;
+	  }
 	 
 	    #teams {
 margin-top:0;
@@ -369,6 +383,18 @@ var i = 0;
 	  
 	  function bombBlue() {
 	  document.getElementById("blueScore").value = "0";
+	  }
+	  
+	  function minusRed() {
+	  var redScEdit = parseInt(document.getElementById('redScore').value);
+	  var redN2000 = redScEdit -= 2000;
+	  document.getElementById("redScore").value = redN2000.toString();
+	  }
+	  
+	  function minusBlue() {
+	  var blueScEdit = parseInt(document.getElementById('blueScore').value);
+	  var blueN2000 = redScEdit -= 2000;
+	  document.getElementById("blueScore").value = blueN2000.toString();
 	  }
 	  
 	  $(function(){
@@ -551,6 +577,8 @@ var i = 0;
 			<button id="clearBtn" onclick="clearAll()">Reset Game</button>
 			<button id="redBomb" onclick="bombRed()">Bomb</button>
 			<button id="blueBomb" onclick="bombBlue()">Bomb</button>
+			<button id="redMinus" onclick="minusRed()">-2000</button>
+			<button id="blueMinus" onclick="minusBlue()">-2000</button>
 		</div>
 	</div>
   <!-- your content here... -->
