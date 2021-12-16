@@ -586,15 +586,13 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
     clearInterval(downloadTimer);
     
     downloadTimer = setInterval(function() {
-      document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+      document.getElementById("timer").innerHTML = timeleft;
       timeleft -= 1;
       if (timeleft <= 0) {
         clearInterval(downloadTimer);
       }
     }, 1000);
   }
-  // If you don't need to show the timer first, comment this line
-  fnStart();
 	 
   </script>
 
