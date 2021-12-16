@@ -589,7 +589,7 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
     downloadTimer = setInterval(function() {
       document.getElementById("timer").innerHTML = timeleft;
       timeleft -= 1;
-      if (timeleft <= 0) {
+      if (timeleft < 0) {
         clearInterval(downloadTimer);
       }
     }, 1000);
