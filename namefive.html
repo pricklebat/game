@@ -1,0 +1,587 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="jquery-3.5.0.js"></script>
+<script src="jquery.easing.1.3.js"></script>
+<script src="ezslots.js"></script>
+  <style>
+	  
+	  body {
+	 background-image: url("https://previews.123rf.com/images/bandarenka/bandarenka1905/bandarenka190500070/127972372-seamless-pattern-with-macaroons-vector-illustration-for-postcard-banner-packaging-paper-fabric-cute-.jpg");
+	  }
+	  
+	  .container { 
+		  	width: 100%;
+      			  margin: 0 auto;
+		 display: grid;
+ 		 grid-auto-columns: 1fr;
+		 grid-template-rows: auto;
+		 justify-items: center;
+		 grid-gap: 10px 10px;
+		 width: 700px;
+		 grid-template-areas: 
+  		   "chart rps"
+		   "chart spin";
+	  }
+	  
+	  .window {
+	font-size:40px;
+	font-family:arial,helvetica,sans-serif;	
+	border:1px solid black;
+}
+	
+	  
+	.ezslots>.window{	
+	overflow:hidden;
+	display:inline-block;
+	border-radius: 10px;
+}
+	  
+	#ezslots1>.window{	
+	  background-color: #B95B5D;
+ 	  color: #F9F6F0;
+	border: 2px solid #f9d1da;
+}
+	  
+	#ezslots2>.window{	
+	background-color: #5BB9B7;
+        color: #F9F6F0;
+	border: 2px solid #bdeae1;
+}
+	  
+.ezslots>.window>.slider>.symbol{
+	text-align:center;
+	display:table;	
+}
+.ezslots>.window>.slider>.symbol>.content{
+      padding:0px;
+      margin:0px;
+      display:table-cell;
+      text-align:center;
+      vertical-align:middle;
+}
+	 	  #cont2 { 
+		 width: 100%;
+      		margin: 0 auto;
+		 display: grid;
+ 		 grid-auto-columns: 1fr;
+		 grid-template-rows: auto;
+		 justify-items: center;
+		grid-gap: 5px 5px;
+		 grid-template-areas: 
+  		   "instArea";
+	  } 
+	 
+	#instructionsBox {
+      		margin: 0 auto;
+		display: grid;
+		  grid-template-columns: 600px;
+ 		 grid-template-rows: auto;
+		grid-template-areas: 
+			"instBtn"
+			"inst";
+		grid-area: instArea;
+	  }
+	  
+	#instructions {
+      		margin: 0 auto;
+		width: 600px;
+		grid-area: inst;
+		background-color: rgba(249, 246, 240, 0.7);
+		border-radius: 10px;
+	  }
+	  
+	  #instBtn {
+		text-align: center;
+      		margin: auto;
+		  grid-area: instBtn;
+	  }
+	  
+	.who1 {
+	width: 100px;
+	height: 100px:;
+	padding: 5px;
+	  }
+	  
+	.who2 {
+	width: 100px;
+	height: 100px:;
+	padding: 5px;
+	  }
+	  
+	textarea { 
+	font-size: 32px;
+        font-family: 'Tahoma', sans-serif;
+	line-height: 120%;
+	resize: none;
+	width: 200px;
+  	height: 380px;
+	background-color: #F9F6F0;
+	border-radius: 10px;
+	  }
+	  
+	input[type=text] {
+	font-size: 42px;
+        font-family: 'Tahoma', sans-serif;
+	line-height: 120%;
+	width: 200px;
+	height: 80px;
+	text-align: center;
+	border-radius: 10px;
+	}
+	  
+	button {
+	-webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+	font-size: 25px;
+	border-radius: 5px;
+	  }
+	  
+	p {
+	text-align: center;
+	font-size: 20px;
+        font-family: 'Tahoma', sans-serif;
+	margin-top: -5px;
+	margin-bottom: -5px;
+	  }
+	  
+.scoreChart {
+  place-self: centre;
+  grid-column: auto;
+  grid-row: auto;
+  display: grid;
+  gap: 10px;
+  grid-area: chart;
+}
+	 
+#redScore {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: #B95B5D;
+  color: #F9F6F0;
+  border: 2px solid #f9d1da;
+	  }
+	  
+#team1 {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #f9d1da;
+  border: 2px solid #B95B5D;
+	  }
+	  
+#blueScore {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: #5BB9B7;
+  color: #F9F6F0;
+  border: 2px solid #bdeae1;
+	  }
+	  
+#team2 {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #bdeae1;
+  border: 2px solid #5BB9B7;
+	  }
+	  
+ #teamLeader {
+  grid-column: 1;
+  grid-row: 3;
+	  }
+	 
+ #clearBtn {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: #Cf3410;
+  color: #Fff435;
+	  }
+	  
+ #redBomb {
+  grid-column: 1;
+  grid-row: 4;
+  background-color: #B95B5D;
+  color: #F9F6F0;
+	  }
+	  
+ #blueBomb {
+  grid-column: 2;
+  grid-row: 4;
+  background-color: #5BB9B7;
+  color: #F9F6F0;
+	  }
+	  
+ #redMinus {
+  grid-column: 1;
+  grid-row: 5;
+  background-color: #B95B5D;
+  color: #F9F6F0;
+	  }
+	  
+ #blueMinus {
+  grid-column: 2;
+  grid-row: 5;
+  background-color: #5BB9B7;
+  color: #F9F6F0;
+	  }
+	 
+	    #teams {
+margin-top:0;
+margin-right:auto;
+margin-bottom:0;
+margin-left:auto;
+	  }
+	  
+#handGame {
+    border: 2px solid #C7BC8F;
+    display: inline-grid;
+    grid-template-columns: 125px;
+    grid-template-rows: 130px;
+    grid-template-areas: 
+    "one two";
+     width: 250px;
+     grid-area: hndG;
+     background-color: #F9F6F0;
+     border-radius: 10px;
+}
+	  
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+
+  #rpsSctn {
+	grid-area: rps;
+	place-self: centre;
+	display: inline-grid;
+ 	align-items:center;
+	grid-template-columns: 125px;
+        grid-template-rows: auto;
+	row-gap: 10px;
+	grid-template-areas: 
+	"hndG hndG"
+     	"nxtB hndB";
+	  }
+
+#rpsButton {
+  grid-area: hndB;
+  margin: 0 auto;
+}
+	  
+#nextRps {
+  grid-area: nxtB;
+  margin: 0 auto;
+}	  
+	  
+#slotsGame {
+grid-area: spin;
+}
+	  
+#redSpin {
+	background-color: #f9d1da;
+}
+	  
+#blueSpin {
+	background-color: #bdeae1;
+}
+	  
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rock Paper Scissors</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script type="text/javascript">
+	  
+    function getNames(){
+	        var myImages1 = new Array();
+    myImages1[1] = "https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png";
+    myImages1[2] = "https://res.cloudinary.com/itsellej/image/upload/v1533400143/rock-paper-scissors/paper.png";
+    myImages1[3] = "https://res.cloudinary.com/itsellej/image/upload/v1533400144/rock-paper-scissors/scissors.png";
+    var rnd1 = Math.floor(Math.random() * myImages1.length);
+    if (rnd1 == 0) {
+            rnd1 = 1;
+    }
+  var myImages2 = new Array();
+    myImages2[1] = "https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png";
+    myImages2[2] = "https://res.cloudinary.com/itsellej/image/upload/v1533400143/rock-paper-scissors/paper.png";
+    myImages2[3] = "https://res.cloudinary.com/itsellej/image/upload/v1533400144/rock-paper-scissors/scissors.png";
+    var rnd2 = Math.floor(Math.random() * myImages2.length);
+    if (rnd2 == 0) {
+            rnd2 = 1;
+    }
+     document.getElementById("hand1").innerHTML = ('<img class="who1" src="' + myImages1[rnd1] + '">');
+     document.getElementById("hand2").innerHTML = ('<img class="who2" src="' + myImages2[rnd2] + '">');
+    }
+
+
+ function leaderSelect() {
+    const input = document.getElementById('team1').value;
+    const lines1 = input.split('\n');
+    const lines2 = input.split('\n');
+    const randomLine1 = lines1[Math.floor(Math.random() * lines1.length)];
+    const randomLine2 = lines2[Math.floor(Math.random() * lines2.length)];
+    
+    //Display your line
+	 if ( randomLine1 !== randomLine2 ) {
+    document.getElementById('team1').value = randomLine1;
+    document.getElementById('team2').value = randomLine2;
+ } else {
+   leaderSelect();
+   return;
+ }
+ }
+
+var i = 0;
+	  
+   function nextMatch() {
+	var redLines = document.getElementById('team1').value.split('\n');
+	var blueLines = document.getElementById('team2').value.split('\n');
+	if ( i < redLines.length){
+	getNames();
+	document.getElementById('player1').innerHTML = redLines[i];
+   	document.getElementById('player2').innerHTML = blueLines[i];
+	i++;
+	} else {
+	i = 0;
+	nextMatch();
+	}
+ }
+
+	  function clearAll() {
+	  document.getElementById('team1').value = "";
+	  document.getElementById('team2').value = "";
+	  document.getElementById("redScore").value = "0";
+	  document.getElementById("blueScore").value = "0";
+	  document.getElementById('player1').innerHTML = "";
+	  document.getElementById('player2').innerHTML = "";
+	  document.getElementById("hand1").innerHTML = "";
+          document.getElementById("hand2").innerHTML = "";
+	  i = 0;
+	  }
+		  
+	  function bombRed() {
+	  document.getElementById("redScore").value = "0";
+	  }
+	  
+	  function bombBlue() {
+	  document.getElementById("blueScore").value = "0";
+	  }
+	  
+	  function minusRed() {
+	  var redScEdit = parseInt(document.getElementById('redScore').value);
+	  var redN2000 = redScEdit -= 2000;
+	  document.getElementById("redScore").value = redN2000.toString();
+	  }
+	  
+	  function minusBlue() {
+	  var blueScEdit = parseInt(document.getElementById('blueScore').value);
+	  var blueN2000 = blueScEdit -= 2000;
+	  document.getElementById("blueScore").value = blueN2000.toString();
+	  }
+	  
+	  $(function(){
+	//setting up some sample set sof things we can make a slot machine of
+	var numbers = ['500','1000','1500','2000','5000','switch','match','500','OT bomb','-500','1000','1500', 'x2', '÷2'];
+	var callbackFunction = function(result){
+		var redVal = JSON.parse(result);
+		var redScEdit = parseInt(document.getElementById('redScore').value);
+		var blueScEdit = parseInt(document.getElementById('blueScore').value);
+		switch (redVal) {
+		case 0:
+		case 7:
+		var redP500 = redScEdit += 500;
+  		document.getElementById("redScore").value = redP500.toString();
+		break;
+		case 1:
+		case 10:
+		var redP1000 = redScEdit += 1000;
+  		document.getElementById("redScore").value = redP1000.toString();
+			break;
+		case 2:
+		case 11:
+		var redP1500 = redScEdit += 1500;
+  		document.getElementById("redScore").value = redP1500.toString();
+			break;
+		case 3:
+		var redP2000 = redScEdit += 2000;
+  		document.getElementById("redScore").value = redP2000.toString();
+			break;
+		case 4:
+		var redP5000 = redScEdit += 5000;
+  		document.getElementById("redScore").value = redP5000.toString();
+			break;
+		case 5:
+			document.getElementById("redScore").value = blueScEdit;
+			document.getElementById("blueScore").value = redScEdit;
+			break;
+		case 6:
+  			document.getElementById("redScore").value = blueScEdit;
+			break;
+		case 8:
+			document.getElementById("blueScore").value = "0";
+			break;
+		case 9:
+		var redN500 = redScEdit -= 500;
+  		document.getElementById("redScore").value = redN500.toString();
+			break;
+		case 12:
+		var redDbl = redScEdit *= 2;
+  		document.getElementById("redScore").value = redDbl.toString();
+			break;
+		case 13:
+		var redHlf = redScEdit /= 2;
+  		document.getElementById("redScore").value = redHlf.toString();
+			break;
+		default:
+		document.getElementById("redScore").value = "not it";
+		}
+	}
+		var callbackFunction2 = function(result){
+		var blueVal = JSON.parse(result);
+		var redScEdit = parseInt(document.getElementById('redScore').value);
+		var blueScEdit = parseInt(document.getElementById('blueScore').value);
+				switch (blueVal) {
+		case 0:
+		case 7:
+		var blueP500 = blueScEdit += 500;
+  		document.getElementById("blueScore").value = blueP500.toString();
+		break;
+		case 1:
+		case 10:
+		var blueP1000 = blueScEdit += 1000;
+  		document.getElementById("blueScore").value = blueP1000.toString();
+			break;
+		case 2:
+		case 11:
+		var blueP1500 = blueScEdit += 1500;
+  		document.getElementById("blueScore").value = blueP1500.toString();
+			break;
+		case 3:
+		var blueP2000 = blueScEdit += 2000;
+  		document.getElementById("blueScore").value = blueP2000.toString();
+			break;
+		case 4:
+		var blueP5000 = blueScEdit += 5000;
+  		document.getElementById("blueScore").value = blueP5000.toString();
+			break;
+		case 5:
+			document.getElementById("redScore").value = blueScEdit;
+			document.getElementById("blueScore").value = redScEdit;
+			break;
+		case 6:
+  			document.getElementById("blueScore").value = redScEdit;
+			break;
+		case 8:
+			document.getElementById("redScore").value = "0";
+			break;
+		case 9:
+		var blueN500 = blueScEdit -= 500;
+  		document.getElementById("blueScore").value = blueN500.toString();
+			break;
+		case 12:
+		var blueDbl = blueScEdit *= 2;
+  		document.getElementById("blueScore").value = blueDbl.toString();
+			break;
+		case 13:
+		var blueHlf = blueScEdit /= 2;
+  		document.getElementById("blueScore").value = blueHlf.toString();
+			break;
+		default:
+		document.getElementById("blueScore").value = "not it";
+		
+		} 
+	}
+	
+	var ezslot1 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0],"symbols":numbers,"height":100,"width":250, "callback":callbackFunction});
+	var ezslot2 = new EZSlots("ezslots2",{"reelCount":1,"startingSet":[0],"symbols":numbers,"height":100,"width":250, "callback":callbackFunction2});
+	 
+	$("#redSpin").click(function(){ console.log(ezslot1.spin());});
+	$("#blueSpin").click(function(){ console.log(ezslot2.spin());});
+		  });
+	  
+	 function showInst(){
+	   var x = document.getElementById("instructions");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+	  
+  </script>
+
+</head>
+
+<body>
+  <h1 style="text-align:center; font-family:'Tahoma', sans-serif;">Max T's Score Keeper</h1><br>
+<div id="cont2">
+	<div id="instructionsBox">
+	<button id="instBtn" onclick="showInst()">Show/Hide Instructions</button><br>
+<p id="instructions" style="display:none;">Put the names of students who want to be a leader into the left hand column, then press the <b>Leaders</b> button. It will designate Red Team and Blue Team leaders.
+	When the students have chosen who wants to be on their team (make sure there are an <i>equal</i> number of students on each team), press the <b>New Pair</b> button to start a game (press <b>Rematch!</b> if it's a draw). Then when the student
+	answers the question correctly, <b>Spin</b> their team's wheel to give them points! After that, press the <b>Next Pair</b> button to go on to the next two students.
+	When finished, press the <b>Reset Game</b> button to clear everything for the next class.</p><br>
+	</div>
+	</div>
+<div class="container">
+<div id="rpsGame">
+  <div class="studentNames">
+<div id="slotsGame">
+<div id="ezslots1"></div>
+<div id="ezslots2"></div>
+<button id="redSpin">Spin Red</button>
+<button id="blueSpin">Spin Blue</button>
+	  </div>
+</div>
+  </div>
+<div id="rpsSctn">
+ <div id="handGame">
+  <div class="playerOne" id="one">
+    <p id="hand1"></p>
+    <p><span id="player1"></span></p>
+  </div>
+  <div class="playerTwo" id= "two">
+    <p id="hand2"></p>
+    <p><span id="player2"></span></p>
+  </div>
+</div><br>
+  <button onclick="getNames();" id="rpsButton">Rematch!</button>
+  <button onclick="nextMatch();" id="nextRps">New<br>Pair</button>
+</div>
+	<br>
+
+		<div class="scoreChart">
+			<input type="text" id="redScore" value=0 readonly><br>
+			<input type="text" id="blueScore" value=0 readonly><br>
+			<textarea id="team1" name="team1" rows="10" cols="15">Write the names of the students who want to be a leader in here and click the button below!</textarea>
+			<textarea id="team2" name="team2" rows="8" cols="15"></textarea>
+			<button id="teamLeader" onclick="leaderSelect()">Leaders</button>
+			<button id="clearBtn" onclick="clearAll()">Reset Game</button>
+			<button id="redBomb" onclick="bombRed()">Bomb</button>
+			<button id="blueBomb" onclick="bombBlue()">Bomb</button>
+			<button id="redMinus" onclick="minusRed()">-2000</button>
+			<button id="blueMinus" onclick="minusBlue()">-2000</button>
+		</div>
+	</div>
+  <!-- your content here... -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>
