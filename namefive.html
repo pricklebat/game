@@ -100,18 +100,7 @@
 		  grid-area: instBtn;
 	  }
 	  
-	.who1 {
-	width: 100px;
-	height: 100px:;
-	padding: 5px;
-	  }
-	  
-	.who2 {
-	width: 100px;
-	height: 100px:;
-	padding: 5px;
-	  }
-	  
+
 	textarea { 
 	font-size: 32px;
         font-family: 'Tahoma', sans-serif;
@@ -157,138 +146,7 @@
   gap: 10px;
   grid-area: chart;
 }
-	 
-#redScore {
-  grid-column: 1;
-  grid-row: 1;
-  background-color: #B95B5D;
-  color: #F9F6F0;
-  border: 2px solid #f9d1da;
-	  }
-	  
-#team1 {
-  grid-column: 1;
-  grid-row: 2;
-  background-color: #f9d1da;
-  border: 2px solid #B95B5D;
-	  }
-	  
-#blueScore {
-  grid-column: 2;
-  grid-row: 1;
-  background-color: #5BB9B7;
-  color: #F9F6F0;
-  border: 2px solid #bdeae1;
-	  }
-	  
-#team2 {
-  grid-column: 2;
-  grid-row: 2;
-  background-color: #bdeae1;
-  border: 2px solid #5BB9B7;
-	  }
-	  
- #teamLeader {
-  grid-column: 1;
-  grid-row: 3;
-	  }
-	 
- #clearBtn {
-  grid-column: 2;
-  grid-row: 3;
-  background-color: #Cf3410;
-  color: #Fff435;
-	  }
-	  
- #redBomb {
-  grid-column: 1;
-  grid-row: 4;
-  background-color: #B95B5D;
-  color: #F9F6F0;
-	  }
-	  
- #blueBomb {
-  grid-column: 2;
-  grid-row: 4;
-  background-color: #5BB9B7;
-  color: #F9F6F0;
-	  }
-	  
- #redMinus {
-  grid-column: 1;
-  grid-row: 5;
-  background-color: #B95B5D;
-  color: #F9F6F0;
-	  }
-	  
- #blueMinus {
-  grid-column: 2;
-  grid-row: 5;
-  background-color: #5BB9B7;
-  color: #F9F6F0;
-	  }
-	 
-	    #teams {
-margin-top:0;
-margin-right:auto;
-margin-bottom:0;
-margin-left:auto;
-	  }
-	  
-#handGame {
-    border: 2px solid #C7BC8F;
-    display: inline-grid;
-    grid-template-columns: 125px;
-    grid-template-rows: 130px;
-    grid-template-areas: 
-    "one two";
-     width: 250px;
-     grid-area: hndG;
-     background-color: #F9F6F0;
-     border-radius: 10px;
-}
-	  
-#one {
-  grid-area: one;
-}
-#two {
-  grid-area: two;
-}
 
-  #rpsSctn {
-	grid-area: rps;
-	place-self: centre;
-	display: inline-grid;
- 	align-items:center;
-	grid-template-columns: 125px;
-        grid-template-rows: auto;
-	row-gap: 10px;
-	grid-template-areas: 
-	"hndG hndG"
-     	"nxtB hndB";
-	  }
-
-#rpsButton {
-  grid-area: hndB;
-  margin: 0 auto;
-}
-	  
-#nextRps {
-  grid-area: nxtB;
-  margin: 0 auto;
-}	  
-	  
-#slotsGame {
-grid-area: spin;
-}
-	  
-#redSpin {
-	background-color: #f9d1da;
-}
-	  
-#blueSpin {
-	background-color: #bdeae1;
-}
 	  
   </style>
   <meta charset="utf-8">
@@ -310,214 +168,7 @@ grid-area: spin;
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script type="text/javascript">
-	  
-    function getNames(){
-	        var myImages1 = new Array();
-    myImages1[1] = "https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png";
-    myImages1[2] = "https://res.cloudinary.com/itsellej/image/upload/v1533400143/rock-paper-scissors/paper.png";
-    myImages1[3] = "https://res.cloudinary.com/itsellej/image/upload/v1533400144/rock-paper-scissors/scissors.png";
-    var rnd1 = Math.floor(Math.random() * myImages1.length);
-    if (rnd1 == 0) {
-            rnd1 = 1;
-    }
-  var myImages2 = new Array();
-    myImages2[1] = "https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png";
-    myImages2[2] = "https://res.cloudinary.com/itsellej/image/upload/v1533400143/rock-paper-scissors/paper.png";
-    myImages2[3] = "https://res.cloudinary.com/itsellej/image/upload/v1533400144/rock-paper-scissors/scissors.png";
-    var rnd2 = Math.floor(Math.random() * myImages2.length);
-    if (rnd2 == 0) {
-            rnd2 = 1;
-    }
-     document.getElementById("hand1").innerHTML = ('<img class="who1" src="' + myImages1[rnd1] + '">');
-     document.getElementById("hand2").innerHTML = ('<img class="who2" src="' + myImages2[rnd2] + '">');
-    }
-
-
- function leaderSelect() {
-    const input = document.getElementById('team1').value;
-    const lines1 = input.split('\n');
-    const lines2 = input.split('\n');
-    const randomLine1 = lines1[Math.floor(Math.random() * lines1.length)];
-    const randomLine2 = lines2[Math.floor(Math.random() * lines2.length)];
-    
-    //Display your line
-	 if ( randomLine1 !== randomLine2 ) {
-    document.getElementById('team1').value = randomLine1;
-    document.getElementById('team2').value = randomLine2;
- } else {
-   leaderSelect();
-   return;
- }
- }
-
-var i = 0;
-	  
-   function nextMatch() {
-	var redLines = document.getElementById('team1').value.split('\n');
-	var blueLines = document.getElementById('team2').value.split('\n');
-	if ( i < redLines.length){
-	getNames();
-	document.getElementById('player1').innerHTML = redLines[i];
-   	document.getElementById('player2').innerHTML = blueLines[i];
-	i++;
-	} else {
-	i = 0;
-	nextMatch();
-	}
- }
-
-	  function clearAll() {
-	  document.getElementById('team1').value = "";
-	  document.getElementById('team2').value = "";
-	  document.getElementById("redScore").value = "0";
-	  document.getElementById("blueScore").value = "0";
-	  document.getElementById('player1').innerHTML = "";
-	  document.getElementById('player2').innerHTML = "";
-	  document.getElementById("hand1").innerHTML = "";
-          document.getElementById("hand2").innerHTML = "";
-	  i = 0;
-	  }
-		  
-	  function bombRed() {
-	  document.getElementById("redScore").value = "0";
-	  }
-	  
-	  function bombBlue() {
-	  document.getElementById("blueScore").value = "0";
-	  }
-	  
-	  function minusRed() {
-	  var redScEdit = parseInt(document.getElementById('redScore').value);
-	  var redN2000 = redScEdit -= 2000;
-	  document.getElementById("redScore").value = redN2000.toString();
-	  }
-	  
-	  function minusBlue() {
-	  var blueScEdit = parseInt(document.getElementById('blueScore').value);
-	  var blueN2000 = blueScEdit -= 2000;
-	  document.getElementById("blueScore").value = blueN2000.toString();
-	  }
-	  
-	  $(function(){
-	//setting up some sample set sof things we can make a slot machine of
-	var numbers = ['500','1000','1500','2000','5000','switch','match','500','OT bomb','-500','1000','1500', 'x2', '÷2'];
-	var callbackFunction = function(result){
-		var redVal = JSON.parse(result);
-		var redScEdit = parseInt(document.getElementById('redScore').value);
-		var blueScEdit = parseInt(document.getElementById('blueScore').value);
-		switch (redVal) {
-		case 0:
-		case 7:
-		var redP500 = redScEdit += 500;
-  		document.getElementById("redScore").value = redP500.toString();
-		break;
-		case 1:
-		case 10:
-		var redP1000 = redScEdit += 1000;
-  		document.getElementById("redScore").value = redP1000.toString();
-			break;
-		case 2:
-		case 11:
-		var redP1500 = redScEdit += 1500;
-  		document.getElementById("redScore").value = redP1500.toString();
-			break;
-		case 3:
-		var redP2000 = redScEdit += 2000;
-  		document.getElementById("redScore").value = redP2000.toString();
-			break;
-		case 4:
-		var redP5000 = redScEdit += 5000;
-  		document.getElementById("redScore").value = redP5000.toString();
-			break;
-		case 5:
-			document.getElementById("redScore").value = blueScEdit;
-			document.getElementById("blueScore").value = redScEdit;
-			break;
-		case 6:
-  			document.getElementById("redScore").value = blueScEdit;
-			break;
-		case 8:
-			document.getElementById("blueScore").value = "0";
-			break;
-		case 9:
-		var redN500 = redScEdit -= 500;
-  		document.getElementById("redScore").value = redN500.toString();
-			break;
-		case 12:
-		var redDbl = redScEdit *= 2;
-  		document.getElementById("redScore").value = redDbl.toString();
-			break;
-		case 13:
-		var redHlf = redScEdit /= 2;
-  		document.getElementById("redScore").value = redHlf.toString();
-			break;
-		default:
-		document.getElementById("redScore").value = "not it";
-		}
-	}
-		var callbackFunction2 = function(result){
-		var blueVal = JSON.parse(result);
-		var redScEdit = parseInt(document.getElementById('redScore').value);
-		var blueScEdit = parseInt(document.getElementById('blueScore').value);
-				switch (blueVal) {
-		case 0:
-		case 7:
-		var blueP500 = blueScEdit += 500;
-  		document.getElementById("blueScore").value = blueP500.toString();
-		break;
-		case 1:
-		case 10:
-		var blueP1000 = blueScEdit += 1000;
-  		document.getElementById("blueScore").value = blueP1000.toString();
-			break;
-		case 2:
-		case 11:
-		var blueP1500 = blueScEdit += 1500;
-  		document.getElementById("blueScore").value = blueP1500.toString();
-			break;
-		case 3:
-		var blueP2000 = blueScEdit += 2000;
-  		document.getElementById("blueScore").value = blueP2000.toString();
-			break;
-		case 4:
-		var blueP5000 = blueScEdit += 5000;
-  		document.getElementById("blueScore").value = blueP5000.toString();
-			break;
-		case 5:
-			document.getElementById("redScore").value = blueScEdit;
-			document.getElementById("blueScore").value = redScEdit;
-			break;
-		case 6:
-  			document.getElementById("blueScore").value = redScEdit;
-			break;
-		case 8:
-			document.getElementById("redScore").value = "0";
-			break;
-		case 9:
-		var blueN500 = blueScEdit -= 500;
-  		document.getElementById("blueScore").value = blueN500.toString();
-			break;
-		case 12:
-		var blueDbl = blueScEdit *= 2;
-  		document.getElementById("blueScore").value = blueDbl.toString();
-			break;
-		case 13:
-		var blueHlf = blueScEdit /= 2;
-  		document.getElementById("blueScore").value = blueHlf.toString();
-			break;
-		default:
-		document.getElementById("blueScore").value = "not it";
-		
-		} 
-	}
-	
-	var ezslot1 = new EZSlots("ezslots1",{"reelCount":1,"startingSet":[0],"symbols":numbers,"height":100,"width":250, "callback":callbackFunction});
-	var ezslot2 = new EZSlots("ezslots2",{"reelCount":1,"startingSet":[0],"symbols":numbers,"height":100,"width":250, "callback":callbackFunction2});
-	 
-	$("#redSpin").click(function(){ console.log(ezslot1.spin());});
-	$("#blueSpin").click(function(){ console.log(ezslot2.spin());});
-		  });
-	  
+	  	  
 	 function showInst(){
 	   var x = document.getElementById("instructions");
   if (x.style.display === "none") {
@@ -526,6 +177,7 @@ var i = 0;
     x.style.display = "none";
   }
 }
+	  
 var downloadTimer; // global var
 	  
 function newGame(){
@@ -615,6 +267,7 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 		<div class="nameFive">
 			<br>
 			<p id="name">Name: <span id="number"></span></p>
+			<br>
 			<p id="option"></p>
 			<button id="timer" onclick="fnStart()">30</button>
 			<button id="newGame" onclick="newGame()">Next</button>
