@@ -528,6 +528,29 @@ var i = 0;
   }
 }
 	  
+function newGame(){
+	        var numberVal = new Array();
+    numberVal[1] = "2";
+    numberVal[2] = "3";
+    numberVal[3] = "4";
+    numberVal[4] = "5";
+    var rnd1 = Math.floor(Math.random() * numberVal.length);
+    if (rnd1 == 0) {
+            rnd1 = 1;
+    }
+	
+  var myImages2 = new Array();
+    myImages2[1] = "https://res.cloudinary.com/itsellej/image/upload/v1533400140/rock-paper-scissors/rock.png";
+    myImages2[2] = "https://res.cloudinary.com/itsellej/image/upload/v1533400143/rock-paper-scissors/paper.png";
+    myImages2[3] = "https://res.cloudinary.com/itsellej/image/upload/v1533400144/rock-paper-scissors/scissors.png";
+    var rnd2 = Math.floor(Math.random() * myImages2.length);
+    if (rnd2 == 0) {
+            rnd2 = 1;
+    }
+     document.getElementById("number").innerHTML = ('numberVal[rnd1]');
+     document.getElementById("hand2").innerHTML = ('<img class="who2" src="' + myImages2[rnd2] + '">');
+    }
+	  
   </script>
 
 </head>
