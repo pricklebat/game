@@ -527,6 +527,7 @@ var i = 0;
     x.style.display = "none";
   }
 }
+var downloadTimer; // global var
 	  
 function newGame(){
 var numberVal = [
@@ -578,7 +579,23 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
      document.getElementById("number").innerHTML = (myNumber);
      document.getElementById("option").innerHTML = (myOption);
     }
-	  
+  
+  function fnStart() {
+    var timeleft = 30;
+    
+    clearInterval(downloadTimer);
+    
+    downloadTimer = setInterval(function() {
+      document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+      timeleft -= 1;
+      if (timeleft <= 0) {
+        clearInterval(downloadTimer);
+      }
+    }, 1000);
+  }
+  // If you don't need to show the timer first, comment this line
+  fnStart();
+	 
   </script>
 
 </head>
@@ -601,6 +618,7 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 			<br>
 			<p id="name">Name: <span id="number"></span></p>
 			<p id="option"></p>
+			<button id="timer" onclick="resetTimer()"></button>
 			<button id="newGame" onclick="newGame()">Next</button>
 		</div>
 	</div>
