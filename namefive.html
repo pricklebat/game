@@ -565,13 +565,18 @@ var optionVal = [
 'Things you find in the bathroom',
 'Things you find in the kitchen',
 'Things you find in the living room',
+'Shapes',
+'Colors',
+'Things you can drink',
+'Things that are sweet',
+'Things that are salty',
 'Things you find in the bedroom'
 ]
-let myNumber = optionVal[Math.floor(Math.random() * optionVal.length)]
+let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 
 
      document.getElementById("number").innerHTML = (myNumber);
-     document.getElementById("hand2").innerHTML = ('<img class="who2" src="' + myImages2[rnd2] + '">');
+     document.getElementById("option").innerHTML = (myOption);
     }
 	  
   </script>
@@ -594,8 +599,7 @@ let myNumber = optionVal[Math.floor(Math.random() * optionVal.length)]
 
 		<div class="nameFive">
 			<p id="name">Name: <span id="number"></span></p>
-			<textarea id="team1" name="team1" rows="10" cols="15">Write the names of the students who want to be a leader in here and click the button below!</textarea>
-			<textarea id="team2" name="team2" rows="8" cols="15"></textarea>
+			<p id="option"></p>
 			<button id="newGame" onclick="newGame()">Next</button>
 		</div>
 	</div>
