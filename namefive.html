@@ -33,14 +33,7 @@
 	font-family:arial,helvetica,sans-serif;	
 	border:1px solid black;
 }
-	.myButtons {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-	  
+  
 	.ezslots>.window{	
 	overflow:hidden;
 	display:inline-block;
@@ -623,10 +616,8 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 			<br>
 			<p id="name">Name: <span id="number"></span></p>
 			<p id="option"></p>
-			<div class="myButtons">
-			<button id="timer"style="width:50px" onclick="fnStart()">30</button>
-			<button id="newGame" style="width:70px" onclick="newGame()">Next</button>
-			</div>
+			<button id="timer" onclick="fnStart()">30</button>
+			<button id="newGame" onclick="newGame()">Next</button>
 		</div>
 	</div>
   <!-- your content here... -->
