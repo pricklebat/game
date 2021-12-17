@@ -22,7 +22,9 @@ v<!doctype html>
 		 grid-gap: 10px 10px;
 		 width: 700px;
 		  grid-template-areas: 
-  		   "chart";
+  		   "topBar";
+  		   "midBar";
+  		   "btmBar";
 		background-color: #F9F6F0;
      		border-radius: 10px;
 		border: 2px solid #C7BC8F;
@@ -32,24 +34,6 @@ v<!doctype html>
 	font-size:40px;
 	font-family:arial,helvetica,sans-serif;	
 	border:1px solid black;
-}
-  
-	.ezslots>.window{	
-	overflow:hidden;
-	display:inline-block;
-	border-radius: 10px;
-}
-	  
-	#ezslots1>.window{	
-	  background-color: #B95B5D;
- 	  color: #F9F6F0;
-	border: 2px solid #f9d1da;
-}
-	  
-	#ezslots2>.window{	
-	background-color: #5BB9B7;
-        color: #F9F6F0;
-	border: 2px solid #bdeae1;
 }
 	  
 .ezslots>.window>.slider>.symbol{
@@ -139,6 +123,14 @@ v<!doctype html>
 	  }
 	  
 .nameFive {
+  place-self: centre;
+  grid-column: auto;
+  grid-row: auto;
+  display: grid;
+  gap: 10px;
+}
+
+.topBar {
   place-self: centre;
   grid-column: auto;
   grid-row: auto;
@@ -266,11 +258,13 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 
 		<div class="nameFive">
 			<br>
-			<p id="name">Name: <span id="number"></span></p>
-			<br>
-			<p id="option"></p>
-			<button id="timer" onclick="fnStart()">30</button>
-			<button id="newGame" onclick="newGame()">Next</button>
+			<div class="topBar">
+				<div class="nameTitle"><p id="name">Name: </p></div>
+				<div class="no"><p id="number"></p></div>
+				<div class="timing"><button id="timer" onclick="fnStart()">30</button></div>
+			</div>
+			<div class="midBar"><p id="option"></p></div>
+			<div class="btmBar"><button id="newGame" onclick="newGame()">Next</button></div>
 		</div>
 	</div>
   <!-- your content here... -->
