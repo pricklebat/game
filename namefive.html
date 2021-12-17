@@ -22,9 +22,9 @@ v<!doctype html>
 		 grid-gap: 10px 10px;
 		 width: 700px;
 		  grid-template-areas: 
-  		   "topBar";
-  		   "midBar";
-  		   "btmBar";
+  		   "top"
+  		   "mid"
+  		   "btm";
 		background-color: #F9F6F0;
      		border-radius: 10px;
 		border: 2px solid #C7BC8F;
@@ -136,9 +136,32 @@ v<!doctype html>
   grid-row: auto;
   display: grid;
   gap: 10px;
-  grid-area: chart;
+  grid-area: top;
+  margin: 0 auto;
+  grid-template-columns: 600px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "nme" "nbr" "ctd";
 }
 
+.midBar {
+  place-self: centre;
+  grid-column: auto;
+  grid-row: auto;
+  display: grid;
+  gap: 10px;
+  grid-area: mid;
+}
+
+.btmBar {
+  place-self: centre;
+  grid-column: auto;
+  grid-row: auto;
+  display: grid;
+  gap: 10px;
+  grid-area: btm;
+}
+	  
 	  
   </style>
   <meta charset="utf-8">
