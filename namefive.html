@@ -22,7 +22,9 @@
 		 grid-gap: 10px 10px;
 		 width: 700px;
 		  grid-template-areas: 
-  		   "chart chartBtn";
+  		   "nm nb sc"
+		   "tg tg tg"
+		   "tb tb tb";
 		background-color: #F9F6F0;
      		border-radius: 10px;
 		border: 2px solid #C7BC8F;
@@ -138,14 +140,51 @@
 	margin-bottom: -5px;
 	  }
 	  
-.nameFive {
+.nameDiv {
   place-self: center;
   grid-column: auto;
   grid-row: auto;
   display: grid;
   gap: 10px;
-  grid-area: chart;
+  grid-area: nm;
 }
+
+.noDiv {
+  place-self: center;
+  grid-column: auto;
+  grid-row: auto;
+  display: grid;
+  gap: 10px;
+  grid-area: nb;
+}
+	  
+.tmrDiv {
+  place-self: center;
+  grid-column: auto;
+  grid-row: auto;
+  display: grid;
+  gap: 10px;
+  grid-area: sc;
+}
+	  
+.optDiv {
+  place-self: center;
+  grid-column: auto;
+  grid-row: auto;
+  display: grid;
+  gap: 10px;
+  grid-area: tg;
+}	  
+	 
+.newDiv {
+  place-self: center;
+  grid-column: auto;
+  grid-row: auto;
+  display: grid;
+  gap: 10px;
+  grid-area: tb;
+}
+	  
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
