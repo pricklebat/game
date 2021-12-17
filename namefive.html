@@ -147,6 +147,15 @@
   grid-area: chart;
 }
 
+#timer {
+   float:left;
+   margin-right:5px;
+	  }
+	  
+#newGame {
+   float:right;
+   margin-right:5px;
+	  }
 	  
   </style>
   <meta charset="utf-8">
@@ -266,7 +275,7 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 
 		<div class="nameFive">
 			<br>
-			<p id="name" style="font-size: 50px;">Name: <span id="number"></span></p>
+			<p id="name" style="font-size: 50px;">Name: <span id="number">5</span></p>
 			<br>
 			<p id="option" style="font-size: 50px;"></p>
 			<button id="timer" onclick="fnStart()">30</button>
