@@ -207,8 +207,9 @@ window.onload = function () {
       letters.appendChild(list);
     }
   }
-}
-	    // Select Catagory
+    
+  
+  // Select Catagory
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
       catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
@@ -253,14 +254,15 @@ window.onload = function () {
       }
     }
   }
-	  
-	     // Animate man
+
+      // Animate man
   var animate = function () {
     var drawMe = lives ;
     drawArray[drawMe]();
   }
 
- // Hangman
+  
+   // Hangman
   canvas =  function(){
 
     myStickman = document.getElementById("stickman");
@@ -322,9 +324,10 @@ window.onload = function () {
    };
   
   drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1]; 
-	  
-	   // OnClick Function
-  check = function () {
+
+
+  // OnClick Function
+   check = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
@@ -397,28 +400,31 @@ window.onload = function () {
     context.clearRect(0, 0, 400, 400);
     play();
   }
+}
+
+
 	</script>
 </head>
 
 <body>
 <div class="wrapper">
-   <h1>Hangman</h1>
-   <h2>Vanilla JavaScript Hangman Game</h2>
-   <p>Use the alphabet below to guess the word, or click hint to get a clue. </p>
+  <h1>Hangman</h1>
+  <h2>Vanilla JavaScript Hangman Game</h2>
+  <p>Use the alphabet below to guess the word, or click hint to get a clue. </p>
 </div>
 <div class="wrapper">
-   <div id="buttons">
-   </div>
-   <p id="catagoryName"></p>
-   <div id="hold">
-   </div>
-   <p id="mylives"></p>
-   <p id="clue">Clue -</p>
-   <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
-   <div class="container">
-      <button id="hint">Hint</button>
-      <button id="reset">Play again</button>
-   </div>
+  <div id="buttons">
+  </div>
+  <p id="catagoryName"></p>
+  <div id="hold">
+  </div>
+  <p id="mylives"></p>
+  <p id="clue">Clue -</p>
+  <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+  <div class="container">
+    <button id="hint">Hint</button>
+    <button id="reset">Play again</button>
+  </div>
 </div>
 
   <script src="js/scripts.js"></script>
