@@ -209,11 +209,11 @@ window.onload = function () {
   // Select Catagory
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
-      catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
+      catagoryName.innerHTML = "The Category Is Food";
     } else if (chosenCategory === categories[1]) {
-      catagoryName.innerHTML = "The Chosen Category Is Films";
+      catagoryName.innerHTML = "The Category Is Animals";
     } else if (chosenCategory === categories[2]) {
-      catagoryName.innerHTML = "The Chosen Category Is Cities";
+      catagoryName.innerHTML = "The Category Is Jobs";
     }
   }
 
@@ -350,9 +350,9 @@ window.onload = function () {
   // Play
   play = function () {
     categories = [
-        ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
-        ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-        ["manchester", "milan", "madrid", "amsterdam", "prague"]
+        ["apple", "peach", "cookie", "cheeseburger", "banana", "carrot", "steak"],
+        ["puppy", "rabbit", "bear", "goat", "tiger"],
+        ["teacher", "doctor", "policeman", "chef", "firefighter"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
