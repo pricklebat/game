@@ -28,6 +28,16 @@ body {
    text-align: center;
    font-size: 18px;
 }
+	
+ .box {
+   width: 100%;
+   margin: 0 auto;
+   background-color: #F9F6F0;
+   border-radius: 10px;
+   border: 2px solid #C7BC8F;
+   width: 700px;
+}
+	
  .wrappper {
    width: 100%;
    margin: 0 auto;
@@ -36,10 +46,6 @@ body {
    content: "";
    display: table;
    clear: both;
-   background-color: #F9F6F0;
-   border-radius: 10px;
-   border: 2px solid #C7BC8F;
-   width: 700px;
 }
  canvas {
    color: #fff;
@@ -414,6 +420,7 @@ window.onload = function () {
   <p>Use the alphabet below to guess the word, or click hint to get a clue. </p>
 </div>
 <div class="wrapper">
+  <div class="box">
   <div id="buttons">
   </div>
   <p id="catagoryName"></p>
@@ -426,6 +433,7 @@ window.onload = function () {
     <button id="hint">Hint</button>
     <button id="reset">Play again</button>
   </div>
+ </div>
 </div>
 
   <script src="js/scripts.js"></script>
