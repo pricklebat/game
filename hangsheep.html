@@ -183,7 +183,7 @@ window.onload = function () {
   
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
-  var getHint ;          // Word getHint
+//  var getHint ;          // Word getHint
   var word ;              // Selected word
   var guess ;             // Geuss
   var geusses = [ ];      // Stored geusses
@@ -194,8 +194,8 @@ window.onload = function () {
   // Get elements
   var showLives = document.getElementById("mylives");
   var showCatagory = document.getElementById("scatagory");
-  var getHint = document.getElementById("hint");
-  var showClue = document.getElementById("clue");
+//  var getHint = document.getElementById("hint");
+//  var showClue = document.getElementById("clue");
 
 
 
@@ -383,7 +383,7 @@ window.onload = function () {
 
   play();
   
-  // Hint
+  /* Hint
 
     hint.onclick = function() {
 
@@ -396,14 +396,14 @@ window.onload = function () {
     var catagoryIndex = categories.indexOf(chosenCategory);
     var hintIndex = chosenCategory.indexOf(word);
     showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
-  };
+  }; */
 
    // Reset
 
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
-    showClue.innerHTML = "";
+ //   showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
     play();
   }
@@ -417,7 +417,7 @@ window.onload = function () {
 <div class="wrapper">
   <h1>Hangman</h1>
   <h2>Vanilla JavaScript Hangman Game</h2>
-  <p>Use the alphabet below to guess the word, or click hint to get a clue. </p>
+  <p>Use the alphabet below to guess the word.</p>
 </div>
 <div class="wrapper">
   <div class="box">
@@ -427,10 +427,8 @@ window.onload = function () {
   <div id="hold">
   </div>
   <p id="mylives"></p>
-  <p id="clue">Clue -</p>
   <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
   <div class="container">
-    <button id="hint">Hint</button>
     <button id="reset">Play again</button>
   </div>
  </div>
