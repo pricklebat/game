@@ -286,20 +286,20 @@ window.onload = function () {
       context.arc(60, 25, 10, 0, Math.PI*2, true);
       context.stroke();
     }
+	
+var imageObj = new Image();    
+	
+  draw = function(imageObj) {
     
-  draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
-    
-    context.moveTo($pathFromx, $pathFromy);
-    context.lineTo($pathTox, $pathToy);
-    context.stroke(); 
+    context.drawImage(imageObj, 10, 10);
 }
 
    frame1 = function() {
-     draw (0, 150, 150, 150);
+     imageObj.src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-1.jpg';
    };
    
    frame2 = function() {
-     draw (10, 0, 10, 600);
+     imageObj.src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-2.jpg';
    };
   
    frame3 = function() {
