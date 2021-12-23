@@ -274,13 +274,28 @@ window.onload = function () {
 
     myStickman = document.getElementById("stickman");
     context = myStickman.getContext('2d');
-    var imageObj = new Image();
+    context.beginPath();
+    context.strokeStyle = "#fff";
+    context.lineWidth = 2;
   };
+  
+    head = function(){
+      myStickman = document.getElementById("stickman");
+      context = myStickman.getContext('2d');
+      context.beginPath();
+      context.arc(60, 25, 10, 0, Math.PI*2, true);
+      context.stroke();
+    }
     
+  draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
+    
+    context.moveTo($pathFromx, $pathFromy);
+    context.lineTo($pathTox, $pathToy);
+    context.stroke(); 
+}
 
    frame1 = function() {
-     imageObj.src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-1.jpg';
-     context.drawImage(imageObj, 10, 10);
+     draw (0, 150, 150, 150);
    };
    
    frame2 = function() {
