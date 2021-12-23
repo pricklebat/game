@@ -257,44 +257,6 @@ window.onload = function () {
     }
   }
 
-var imgArray = new Array();
-
-imgArray[0] = new Image();
-imgArray[0].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-1.jpg';
-
-imgArray[1] = new Image();
-imgArray[1].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-2.jpg';
-
-imgArray[2] = new Image();
-imgArray[2].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-3.jpg';
-
-imgArray[3] = new Image();
-imgArray[3].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-4.jpg';
-	
-imgArray[4] = new Image();
-imgArray[4].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-5.jpg';
-	
-imgArray[5] = new Image();
-imgArray[5].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-6.jpg';
-	
-imgArray[6] = new Image();
-imgArray[6].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-7.jpg';
-	
-imgArray[7] = new Image();
-imgArray[7].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-8.jpg';
-	
-imgArray[8] = new Image();
-imgArray[8].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-9.jpg';
-	
-imgArray[9] = new Image();
-imgArray[9].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-10.jpg';
-	
-var img = document.getElementById(clue);	
-	
-var animate = function () {
-    var drawMe = lives ;
-    document.getElementById(clue).src = imgArray[drawMe].src;
-  }
 
 	
       // Animate man
@@ -461,7 +423,7 @@ var animate = function () {
   <div id="hold">
   </div>
   <p id="mylives"></p>
-  <p id="clue"></p>
+  <p id="clue">Clue -</p>
   <div class="container">
     <button id="hint">Hint</button>
     <button id="reset">Play again</button>
