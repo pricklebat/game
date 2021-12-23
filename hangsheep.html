@@ -47,11 +47,6 @@ body {
    display: table;
    clear: both;
 }
- canvas {
-   color: #fff;
-   border: #fff dashed 2px;
-   padding: 15px;
-}
 	
 	h1, h2, h3 {
    font-family: 'Roboto', sans-serif;
@@ -262,6 +257,8 @@ window.onload = function () {
     }
   }
 
+
+	
       // Animate man
 /*  var animate = function () {
     var drawMe = lives ;
@@ -378,7 +375,6 @@ window.onload = function () {
     result();
     comments();
     selectCat();
-    canvas();
   }
 
   play();
@@ -428,7 +424,6 @@ window.onload = function () {
   </div>
   <p id="mylives"></p>
   <p id="clue">Clue -</p>
-  <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
   <div class="container">
     <button id="hint">Hint</button>
     <button id="reset">Play again</button>
