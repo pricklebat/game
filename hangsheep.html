@@ -297,7 +297,7 @@ imgArray[8].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/She
 imgArray[9] = new Image();
 imgArray[9].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/Sheep-DRAWING-%E2%80%93-STEP-1.jpg';
 	
-function nextImage(hsheep){
+newSheep = function nextImage(hsheep){
     var draw = lives;
     var img = document.getElementById(hsheep);
     document.getElementById(hsheep).src = imgArray[draw].src;
@@ -390,7 +390,7 @@ function nextImage(hsheep){
       if (j === -1) {
         lives -= 1;
         comments();
-     //   animate();
+        newSheep();
       } else {
         comments();
       }
