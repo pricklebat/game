@@ -36,18 +36,21 @@ body {
    border-radius: 10px;
    border: 2px solid #C7BC8F;
    width: 700px;
-}
-	
- .wrappper {
-   width: 100%;
-   margin: 0 auto;
    display: grid;
    grid-auto-columns: 1fr;
    grid-template-rows: auto;
    justify-items: center;
    grid-gap: 10px 10px;
+   grid-template-areas: 
+   "btns btns"
+   "gtxt shpy";
 }
- .wrappper:after {
+	
+ .wrapper {
+   width: 100%;
+   margin: 0 auto;
+}
+ .wrapper:after {
    content: "";
    display: table;
    clear: both;
@@ -77,6 +80,18 @@ img {
   height: 30%;
   width: 30%;
 }
+#buttons {
+   place-self: center;
+   grid-area: btns;
+}
+#gameText {
+   place-self: center;
+   grid-area: gtxt;
+}
+#sheepy {
+   place-self: center;
+   grid-area: shpy;
+}	
  #alphabet {
    margin: 15px auto;
    padding: 0;
