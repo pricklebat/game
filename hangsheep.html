@@ -269,6 +269,8 @@ window.onload = function () {
       catagoryName.innerHTML = "The category is Body Parts";
     } else if (chosenCategory === categories[7]) {
       catagoryName.innerHTML = "The category is Nature";
+    } else if (chosenCategory === categories[8]) {
+      catagoryName.innerHTML = "The category is Food";
     }
   }
 
@@ -442,14 +444,15 @@ imgArray[9].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/She
   // Play
   play = function () {
     categories = [
-        ["apple", "peach", "cookie", "cheeseburger", "banana", "carrot", "steak", "chicken", "chocolate", "noodles", "sandwich", "mango", "muffin", "orange", "candy", "shrimp", "coconut", "fish", "pie", "bread", "eggs", "spaghetti", "celery", "watermelon", "donut", "lemon", "corn", "lollipop", "eggplant", "rice", "cabbage", "garlic", "mushrooms", "pasta", "hot-chocolate", "strawberries", "cucumber", "peanuts", "potato", "chips", "pineapple"],
+        ["apple", "peach", "cookie", "cheeseburger", "banana", "carrot", "steak", "chicken", "chocolate", "noodles", "sandwich", "mango", "muffin", "orange", "candy", "shrimp", "coconut", "fish", "pie", "bread", "eggs", "spaghetti", "celery", "watermelon", "donut"],
         ["puppy", "rabbit", "bear", "goat", "tiger", "frog", "chicken", "turtle", "crab", "shark", "crocodile", "giraffe", "horse", "butterfly", "rhino", "snake", "panda", "eagle", "swan", "bee", "wolf", "lion", "owl", "caterpilar", "gorilla", "hippo", "snail", "beetle", "kangaroo", "parrot", "whale", "grasshopper", "ant", "camel", "lizard"],
         ["teacher", "doctor", "policeman", "chef", "firefighter", "nurse", "dancer", "singer", "artist", "scientist", "taxi-driver", "cleaner", "builder", "dentist", "vet"],
 	["bedroom", "classroom", "park", "office", "swimming-pool", "living-room", "library", "supermarket", "market", "playground", "store", "restaurant", "movie-theater", "hospital", "castle", "airport", "church", "gas-station", "kitchen"],
 	["soccer", "cycling", "hockey", "weightlifting", "swimming", "wrestling", "basketball", "baseball", "bowling", "boxing", "taekwondo", "badminton", "tennis", "table-tennis", "volleyball", "football", "golf", "running", "skiing", "surfing"],
 	["united-states", "australia", "england", "canada", "mexico", "thailand", "new-zealand", "france", "spain", "italy", "russia", "india", "china", "brazil"],    
     	["teeth", "eyebrow", "shoulder", "tongue", "bones", "finger", "ankle", "thumb", "mouth", "eyelash", "elbow", "knees", "skin", "heart", "stomach"],
-	["the-sun", "the-moon", "stars", "rainbow", "river", "flower", "lake", "snow", "clouds", "mountain", "forest", "tree", "leaf", "wind", "ocean"]
+	["the-sun", "the-moon", "stars", "rainbow", "river", "flower", "lake", "snow", "clouds", "mountain", "forest", "tree", "leaf", "wind", "ocean"],
+	["lemon", "corn", "lollipop", "eggplant", "rice", "cabbage", "garlic", "mushrooms", "pasta", "hot-chocolate", "strawberries", "cucumber", "peanuts", "potato", "chips", "pineapple", "hamburger", "pizza", "ice-cream", "juice", "soda"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
