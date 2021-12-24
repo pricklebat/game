@@ -262,10 +262,6 @@ window.onload = function () {
       catagoryName.innerHTML = "The Category Is Animals";
     } else if (chosenCategory === categories[2]) {
       catagoryName.innerHTML = "The Category Is Jobs";
-    } else if (chosenCategory === categories[3]) {
-      catagoryName.innerHTML = "The Category Is Places";
-    } else if (chosenCategory === categories[4]) {
-      catagoryName.innerHTML = "The Category Is Sports";
     }
   }
 
@@ -439,16 +435,11 @@ imgArray[9].src = 'https://iheartcraftythings.com/wp-content/uploads/2021/05/She
   // Play
   play = function () {
     categories = [
-        ["apple", "peach", "cookie", "cheeseburger", "banana", "carrot", "steak", "chicken", "chocolate", "noodles", "sandwich", "mango", "muffin", "orange", "candy", "shrimp"
+        ["apple", "peach", "cookie", "cheeseburger", "banana", "carrot", "steak", "chicken", "chocolate", "noodles", "sandwich", "mango", "muffin", "orange", "candy", "shrimp",
 	"coconut", "fish", "pie", "bread", "eggs", "spaghetti", "celery", "watermelon", "donut", "lemon", "corn", "lollipop", "eggplant", "rice", "cabbage", "garlic", "mushrooms"
 	"pasta", "hot-chocolate", "strawberries", "cucumber", "peanuts", "potato", "chips", "pineapple"],
-        ["puppy", "rabbit", "bear", "goat", "tiger", "frog", "chicken", "turtle", "crab", "shark", "crocodile", "giraffe", "horse", "butterfly", "rhino", "snake", "panda",
-	"eagle", "swan", "bee", "wolf", "lion", "owl", "caterpilar", "gorilla", "hippo", "snail", "beetle", "kangaroo", "parrot", "whale", "grasshopper", "ant", "camel", "lizard"],
-        ["teacher", "doctor", "policeman", "chef", "firefighter", "nurse", "dancer", "singer", "artist", "scientist", "taxi-driver", "cleaner", "builder", "dentist", "vet"],
-	["bedroom", "classroom", "park", "office", "swimming-pool", "living room", "library", "supermarket", "market", "playground", "store", "restaurant", "movie theater", "hospital"
-	"castle", "airport", "church", "gas station", "gym"],
-	["soccer", "cycling", "hockey", "weightlifting", "swimming", "wrestling", "basketball", "baseball", "bowling", "boxing", "taekwondo", "badminton", "tennis", "table-tennis", "volleyball",
-	 "football", "golf", "running", "skiing", "surfing"]
+        ["puppy", "rabbit", "bear", "goat", "tiger", "frog", "chicken", "turtle", "crab", "shark", "crocodile", "giraffe", "horse", "butterfly", "rhino", "snake", "panda", "eagle", "swan", "bee", "wolf", "lion", "owl", "caterpilar", "gorilla", "hippo", "snail", "beetle", "kangaroo", "parrot", "whale", "grasshopper", "ant", "camel", "lizard"],
+        ["teacher", "doctor", "policeman", "chef", "firefighter", "nurse", "dancer", "singer", "artist", "scientist", "taxi-driver", "cleaner", "builder", "dentist", "vet"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
