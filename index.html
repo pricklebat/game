@@ -391,13 +391,13 @@ var i = 0;
 	  
 	  function minusRed() {
 	  var redScEdit = parseInt(document.getElementById('redScore').value);
-	  var redN2000 = redScEdit -= 2000;
+	  var redN2000 = redScEdit += 3000;
 	  document.getElementById("redScore").value = redN2000.toString();
 	  }
 	  
 	  function minusBlue() {
 	  var blueScEdit = parseInt(document.getElementById('blueScore').value);
-	  var blueN2000 = blueScEdit -= 2000;
+	  var blueN2000 = blueScEdit += 3000;
 	  document.getElementById("blueScore").value = blueN2000.toString();
 	  }
 	  
@@ -581,8 +581,8 @@ var i = 0;
 			<button id="clearBtn" onclick="clearAll()">Reset Game</button>
 			<button id="redBomb" onclick="bombRed()">Bomb</button>
 			<button id="blueBomb" onclick="bombBlue()">Bomb</button>
-			<button id="redMinus" onclick="minusRed()">-2000</button>
-			<button id="blueMinus" onclick="minusBlue()">-2000</button>
+			<button id="redMinus" onclick="minusRed()">+3000</button>
+			<button id="blueMinus" onclick="minusBlue()">+3000</button>
 		</div>
 	</div>
 	<div class="linksBar"><p style="font-size: 1.6em;">Scoring System | <a href="https://zoomga.me/namefive">Name Five</a> | <a href="https://zoomga.me/hangsheep">Hang Sheep</a><br></p></div>
