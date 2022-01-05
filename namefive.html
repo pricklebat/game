@@ -74,7 +74,8 @@
 		 justify-items: center;
 		grid-gap: 5px 5px;
 		 grid-template-areas: 
-  		   "instArea";
+  		   "instArea"
+		   "optnArea";
 	  } 
 	 
 	#instructionsBox {
@@ -96,12 +97,36 @@
 		border-radius: 10px;
 	  }
 	  
-	  #instBtn {
+	  #optnBtn {
 		text-align: center;
       		margin: auto;
-		  grid-area: instBtn;
+		  grid-area: optnBtn;
 	  }
 	  
+	#optionsBox {
+      		margin: 0 auto;
+		display: grid;
+		  grid-template-columns: 600px;
+ 		 grid-template-rows: auto;
+		grid-template-areas: 
+			"optnBtn"
+			"optn";
+		grid-area: optnArea;
+	  }
+	  
+	#options {
+      		margin: 0 auto;
+		width: 600px;
+		grid-area: optn;
+		background-color: rgba(249, 246, 240, 0.7);
+		border-radius: 10px;
+	  }
+	  
+	  #optnBtn {
+		text-align: center;
+      		margin: auto;
+		  grid-area: optnBtn;
+	  }
 
 	textarea { 
 	font-size: 32px;
@@ -221,6 +246,15 @@
     x.style.display = "none";
   }
 }
+
+	 function showOptn(){
+	   var x = document.getElementById("options");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 	  
 var downloadTimer; // global var
 	  
@@ -329,6 +363,14 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 	<div id="instructionsBox">
 	<button id="instBtn" onclick="showInst()">Show/Hide Instructions</button><br>
 		<p id="instructions" style="display:none;">Press the <b>Next</b> button to start. You must name between 2-5 things
+			 that come under the topic that appears in the middle of the screen. For example things that are green: grass, slime, limes etc.
+			The timer button on the left will count down from 30, giving you 30 seconds to answer. If you cannot answer within 30 seconds, press the timer again to
+		 restart it and another person can take a turn on the same topic. If the person manages to correctly list as many things under the time limit,
+			give them some points and then press the <b>Next</b> button again to get ready for the next round.</p><br>
+	</div>
+	<div id="optionsBox">
+	<button id="opnBtn" onclick="showOptn()">Show/Hide Options</button><br>
+		<p id="options" style="display:none;">Press the <b>Next</b> button to start. You must name between 2-5 things
 			 that come under the topic that appears in the middle of the screen. For example things that are green: grass, slime, limes etc.
 			The timer button on the left will count down from 30, giving you 30 seconds to answer. If you cannot answer within 30 seconds, press the timer again to
 		 restart it and another person can take a turn on the same topic. If the person manages to correctly list as many things under the time limit,
