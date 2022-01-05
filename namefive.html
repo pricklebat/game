@@ -372,11 +372,13 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 	</div>
 	<div id="optionsBox">
 	<button id="opnBtn" onclick="showOptn()">Options</button><br>
-		<p id="options" style="display:none;">Press the <b>Next</b> button to start. You must name between 2-5 things
-			 that come under the topic that appears in the middle of the screen. For example things that are green: grass, slime, limes etc.
-			The timer button on the left will count down from 30, giving you 30 seconds to answer. If you cannot answer within 30 seconds, press the timer again to
-		 restart it and another person can take a turn on the same topic. If the person manages to correctly list as many things under the time limit,
-			give them some points and then press the <b>Next</b> button again to get ready for the next round.</p><br>
+		<div id="options" style="display:none;">
+		<select id="difficulty">
+    		  <option value="1">Easy</option>
+    		  <option value="2">Medium</option>
+    		  <option value="3">Hard</option>
+		</select>
+		</div><br>
 	</div>
 	</div>
 <div class="container">
