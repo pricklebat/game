@@ -74,8 +74,9 @@
 		 justify-items: center;
 		grid-gap: 5px 5px;
 		 grid-template-areas: 
-  		   "instArea"
-		   "optnArea";
+		   "instBtn  optnBtn"
+  		   "instArea instArea"
+		   "optnArea optnArea";
 	  } 
 	 
 	#instructionsBox {
@@ -84,7 +85,6 @@
 		  grid-template-columns: 600px;
  		 grid-template-rows: auto;
 		grid-template-areas: 
-			"instBtn"
 			"inst";
 		grid-area: instArea;
 	  }
@@ -110,7 +110,6 @@
 		  grid-template-columns: 600px;
  		 grid-template-rows: auto;
 		grid-template-areas: 
-			"optnBtn"
 			"optn";
 		grid-area: optnArea;
 	  }
