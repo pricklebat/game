@@ -333,6 +333,201 @@ var optionVal = [
 'Ball Sports',
 'Things you bring on a picnic',
 ]
+
+var mediumVal = [
+'Words that start with K',
+'Words that start with B',
+'Words that start with G',
+'Words that start with S',
+'Words that start with T',
+'Places in the city',
+'Countries in Asia',
+'Countries in Europe',
+'Farm animals',
+'Zoo animals',
+'Wild animals',
+'Things that are green',
+'Things that are yellow',
+'Things that are pink',
+'Things that are red',
+'Things that are cold',
+'Things that are hot',
+'Things that are heavy',
+'Things that are big',
+'Things that are small',
+'Types of buildings',
+'Things you find in the bathroom',
+'Things you find in the kitchen',
+'Things you find in the living room',
+'Desserts',
+'Ice Cream Flavors',
+'Things you can drink',
+'Things that are sweet',
+'Things you can smell',
+'Things you find in the bedroom',
+'Things you use every day',
+'Jobs',
+'Things that are round',
+'Things that are square',
+'School Subjects',
+'Modes of Transport',
+'Body Parts',
+'Months',
+'Sea Animals',
+'Musical Instruments',
+'Things that fly',
+'Feelings',
+'Hobbies',
+'Scary things',
+'Birthday Presents',
+'Kinds of Weather',
+'Types of Clothing',
+'Team Sports',
+'Ball Sports',
+]
+
+var easyVal = [
+'Words that start with K',
+'Words that start with B',
+'Words that start with G',
+'Words that start with S',
+'Words that start with T',
+'Places in the city',
+'Farm animals',
+'Zoo animals',
+'Wild animals',
+'Things that are green',
+'Things that are yellow',
+'Things that are pink',
+'Things that are red',
+'Family Members',
+'Things in the classroom',
+'Shapes',
+'Colors',
+'Desserts',
+'Things you can drink',
+'Things that are sweet',
+'Things you use every day',
+'Body Parts',
+'Months',
+'Things in your schoolbag',
+'Sea Animals',
+'Fruit',
+'Vegetables',
+'Pets',
+'Scary things',
+'Kinds of Weather',
+'Types of Clothing',
+'Sports,
+]
+
+var hardVal = [
+'Words that start with K',
+'Words that start with B',
+'Words that start with G',
+'Words that start with S',
+'Words that start with T',
+'Countries in Asia',
+'Countries in Europe',
+'Things that are green',
+'Things that are yellow',
+'Things that are pink',
+'Things that are red',
+'Places you have been',
+'Types of buildings',
+'Things you find in the bathroom',
+'Things you find in the kitchen',
+'Things you find in the living room',
+'Desserts',
+'Ice Cream Flavors',
+'Things that are sweet',
+'Things you can smell',
+'Things you find in the bedroom',
+'Jobs',
+'Things that are round',
+'Things that are square',
+'School Subjects',
+'Modes of Transport',
+'Sea Animals',
+'Musical Instruments',
+'Things that fly',
+'Things in the garden',
+'Feelings',
+'Hobbies',
+'Scary things',
+'Halloween Monsters',
+'Birthday Presents',
+'Famous Cities',
+'Things you bring on a picnic',
+'Places with water',
+]
+
+var allVal = [
+'Words that start with K',
+'Words that start with B',
+'Words that start with G',
+'Words that start with S',
+'Words that start with T',
+'Places in the city',
+'Countries in Asia',
+'Countries in Europe',
+'Farm animals',
+'Zoo animals',
+'Wild animals',
+'Things that are green',
+'Things that are yellow',
+'Things that are pink',
+'Things that are red',
+'Family Members',
+'Things in the classroom',
+'Things that are cold',
+'Things that are hot',
+'Things that are heavy',
+'Things that are big',
+'Things that are small',
+'Places you have been',
+'Types of buildings',
+'Things you find in the bathroom',
+'Things you find in the kitchen',
+'Things you find in the living room',
+'Shapes',
+'Colors',
+'Desserts',
+'Ice Cream Flavors',
+'Things you can drink',
+'Things that are sweet',
+'Things you can smell',
+'Things you find in the bedroom',
+'Things you use every day',
+'Jobs',
+'Things that are round',
+'Things that are square',
+'School Subjects',
+'Modes of Transport',
+'Body Parts',
+'Months',
+'Things in your schoolbag',
+'Sea Animals',
+'Musical Instruments',
+'Things that fly',
+'Things in the garden',
+'Feelings',
+'Fruit',
+'Vegetables',
+'Pets',
+'Hobbies',
+'Scary things',
+'Halloween Monsters',
+'Birthday Presents',
+'Famous Cities',
+'Kinds of Weather',
+'Types of Clothing',
+'Team Sports',
+'Ball Sports',
+'Things you bring on a picnic',
+'Places with water',
+]
+
 let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
 
 
@@ -355,6 +550,29 @@ let myOption = optionVal[Math.floor(Math.random() * optionVal.length)]
     }, 1000);
   }
 	 
+	function update() {
+		var selection = document.getElementById('difficulty');
+		var diffValue = selection.options[selection.selectedIndex].value;
+		
+		switch(diffValue) {
+			case 1:
+			  optionVal.length = 0;
+			  optionVal.push.apply(optionVal, allVal);
+			break;			
+			case 2:
+			  optionVal.length = 0;
+			  optionVal.push.apply(optionVal, easyVal);
+			break;
+			case 3:
+			  optionVal.length = 0;
+			  optionVal.push.apply(optionVal, mediumVal);
+			break; 
+			case 4:
+			  optionVal.length = 0;
+			  optionVal.push.apply(optionVal, hardVal);
+			break;  
+			}	  
+	}
   </script>
 
 </head>
