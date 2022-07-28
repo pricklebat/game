@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width". intial-scale="1.0">
+    <meta name="description" content="blog landing page">
+    <link href="../styles.css" rel="stylesheet">
+    <title>Max Hilton | Jump, Barf!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <body>
+    <header>
+      <div class="header-banner">
+        <a href="../index.html" class="header-item"><i>ABOUT</i></a>
+        <a href="../blog/core.html" class="header-item">CORE</a>
+        <a href="../blog/tech.html" class="header-item">TECH</a>
+      </div>
+    </header>
+    <main>
+      <div class="intro">
+        <h3>Jump, Barf!</h3>
+        <p>This is my first game I have ever made! It's an endless runner starring Barf, who looks suspiciously like Jazz Jackrabbit- wholly unintentionally.</p>
+        <p>Press W to jump, double tap it to double jump! Try not to get hit! I believe in you!!!</p>
+        <button id="play">Play!</button>
+      </div>
+        <div class="game-area">
+          <p id="score">0</p>
+          <img src="./game-images/title.gif" alt="Jump, Barf!" id="game-title"><br>
+          <img src="./game-images/creature-run.gif" alt="Jump, Barf!" id="barf-gif"><br>
+          <div id="barf"></div>
+          <img src="./game-images/start-button.gif" alt="Let's GO!" id="start-button" >
+          <img src="./game-images/title-room.png" alt="The title room screen" id="title-room">
+        </div>
+    </main>
+    <footer>
+      <p class="footer-text">- Max Hilton, 2022 -</p>
+    </footer>
+    <script src="./game-one.js"></script>
+  </body>
+</html>
