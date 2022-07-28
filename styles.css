@@ -419,6 +419,105 @@ a {
 }
 
 @media (max-width: 800px) {
+
+    #jumpBarf {
+        height: 36px;
+        width: 36px;
+    }
+    
+    .game-area {
+        width: 400px;
+        height: 300px;
+    }
+    
+    #game-title {
+        width: 350px;
+    }
+    
+    #start-button {
+        width: 150px;
+        margin: 0px auto;
+    }
+
+    #title-room {
+        width: 400px;
+        height: 300px;
+    }
+    
+    #barf-gif {
+        width: 36px;
+        height: 36px;
+        top: 135px;
+        z-index: 3;
+    }
+    
+    #barf {
+        width: 36px;
+        height: 36px;
+        left: 50px;
+        bottom: 50px;
+        z-index: 2;
+    }
+    
+    
+    #background {
+        height: 300px;
+        width: 250%;
+        top: -37px;
+    }
+    
+    .grndEnemy {
+        bottom: 50px;
+    }
+    
+    .airEnemy {
+        bottom: 70px;
+    }
+    
+    .bad {
+        height: 24px;
+        width: 24px;
+        right: -25px;
+        z-index: 3;
+    }
+    
+    #score {
+        font-size: 30px;
+        right: 18px;
+        top: -22px;
+    }
+    
+    .hearts {
+        height: 38px;
+        width: 38px;
+    }
+    
+    #hrt0 {
+        left: 65px;
+        top: 5px;
+    }
+    
+    #hrt1 {
+        left: 35px;
+        top: 5px;
+    }
+    
+    #hrt2 {
+        left: 5px;
+        top: 5px;
+    }
+    
+    #gOverT {
+        margin: -10px auto;
+        height: 150px;
+
+    }
+    
+    #againT {
+        margin: 5px auto;
+        height: 75px;
+    }
+
     main {
         flex-direction: column;
         width: 95%;
