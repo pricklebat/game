@@ -661,7 +661,7 @@ function endLevel() {
     levelWon = true
     barfImg.src = "./game-images/creature-happy.gif"
     $("#barf").animate({
-        left: 800
+        left: 400
     }, 2000, 'swing')
     setTimeout(bgFadeOut, 1000)
     setTimeout(newGame, 7000)
