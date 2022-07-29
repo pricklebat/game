@@ -297,6 +297,17 @@ a {
     image-rendering: pixelated;
 }
 
+#volumeBtn {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: none;
+    image-rendering: pixelated;
+    z-index: 5;
+}
+
 #background {
     height: 600px;
     width: 250%;
