@@ -657,6 +657,7 @@ function endLevel() {
     flagAppear()
     levelWon = true
     barfImg.src = "./game-images/creature-happy.gif"
+    mrBarf.style.bottom = "100px"
     $("#barf").animate({
         left: 800
     }, 2000, 'swing')
