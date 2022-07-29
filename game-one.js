@@ -7,12 +7,17 @@ const gameScreen = document.getElementsByClassName("game-area")[0]
 const mrBarf = document.getElementById("barf")
 const volBtn = document.getElementById("volumeBtn")
 let barfImg = document.createElement("img")
+let enemies = document.querySelectorAll(".bad");
 barfImg.src = "./game-images/creature-2.png"
 barfImg.id = "jumpBarf"
 
 let bgImg = document.createElement("img")
 bgImg.src = "./game-images/total-bg.png"
 bgImg.id = "background"
+
+let flagpole = document.createElement("img")
+flagpole.src = "./game-images/flagpole.png"
+flagpole.id = "fpole"
 
 let heart0 = document.createElement("img")
 let heart1 = document.createElement("img")
@@ -44,7 +49,7 @@ let runWav = new Audio('./sounds/running.wav')
 let landWav = new Audio('./sounds/landing.wav')
 let letsGo = new Audio('./sounds/letsgo.wav')
 let introWav = new Audio('./sounds/music0.mp3')
-let lvlWav = new Audio('./sounds/music2.mp3')
+let lvlWav = new Audio
 let okWav = new Audio('./sounds/okay2.wav')
 let overWav = new Audio('./sounds/gameover.wav')
 let replayWav = new Audio('./sounds/music1.mp3')
@@ -54,6 +59,7 @@ let owWav = new Audio()
 let restartWav = new Audio()
 let yayWav = new Audio()
 let deathWav = new Audio()
+let winWav = new Audio()
 
 runWav.classList.add("sfx", "sounds")
 landWav.classList.add("sfx", "sounds")
@@ -76,6 +82,8 @@ let horizontalMatch = false
 let addNew = true
 let count = 0
 let livesLost = 0
+let levelWon = false
+let stage = 0
 
 function loadIn() {
     barfGif.src = "./game-images/creature-happy.gif"
@@ -110,6 +118,7 @@ function resetVolume() {
     restartWav.volume = 1
     yayWav.volume = 1
     deathWav.volume = 0.7
+    winWav.volume = 0.3
 }
 
 function muting() {
@@ -129,6 +138,7 @@ function muting() {
         restartWav.volume = 0
         yayWav.volume = 0
         deathWav.volume = 0
+        winWav.volume = 0
         mutedSound = true
         volBtn.src= "./game-images/music-icon-transp1.png"
     } else {
@@ -149,8 +159,6 @@ function startGame() {
     $("#game-title").fadeOut("fast");
     titleBarfFalls()
 }
-
-
 
 function barfAppears () {
     barf.append(barfImg)
@@ -184,17 +192,20 @@ function newGame() {
     document.getElementById("score").style.right = "35px"
     document.getElementById("score").style.top = "-30px"
     replayWav.pause()
-    count = 0
-    livesLost = 0
+    winWav.pause()
+    levelWon = false
     gameOver = false
     $("#score").fadeIn()
     mrBarf.style.left = "-50px"
     mrBarf.style.bottom = "100px"
     barfImg.src = "./game-images/creature-happy.gif"
+    $("#barf").show()
     $("#barf").animate({
         left: "100px"
     }, 200, 'linear')
     gameScreen.append(bgImg)
+    gameScreen.append(flagpole)
+    switchStage()
     $("#background").fadeIn()
     generateBaddies()
     letsGo.currentTime = 0
@@ -204,6 +215,23 @@ function newGame() {
     collisionCheck()
     removeBaddies()
     showHearts()
+}
+
+function switchStage() {
+    bgImg.style.animation = "animatedBackground 4s linear infinite"
+    switch (stage) {
+        case 0:
+            bgImg.src = "./game-images/total-bg.png"
+            lvlWav.src = './sounds/music2.mp3'
+            break;
+        case 1:
+            bgImg.src = "./game-images/snow-bg.png"
+            lvlWav.src = './sounds/music10.mp3'
+            break;
+        default:
+            bgImg.src = "./game-images/total-bg.png"    
+            break;
+    }
 }
 
 function srsBarf() {
@@ -301,12 +329,12 @@ let fallSmall = false
 document.addEventListener("keydown", (e) => {
     if (e.repeat) { return 
     } else if (!gameOver) {
-    if (dblJump != false && e.key ==="w") {
+    if (dblJump != false && e.key ==="w" || dblJump != false && e.key ===" ") {
         barfTallJump()
         dblJump = false
         flightTime = 200
         fallSmall = false
-      } else if (e.key ==="w") {
+      } else if (e.key ==="w" || e.key === " ") {
         barfShortJump()
         dblJump = true
         dblJump = setTimeout('dblJump = false', 250);
@@ -314,11 +342,12 @@ document.addEventListener("keydown", (e) => {
         fallSmall = true
         fallSmall = setTimeout('fallSmall = false', 250);
       }
-      if (e.key === "w" && fallSmall){
+      if (e.key === "w" && fallSmall || e.key === " " && fallSmall){
       setTimeout(barfFall, (flightTime + 80))
       }
     }
 })
+
 
 let jumpTime = 0
 
@@ -403,7 +432,7 @@ let gap2 = 1000
 let highscoreList = []
 
 function generateBaddies() {
-    if (gameOver) {
+    if (gameOver || levelWon) {
         $(".airEnemy").hide()
         $(".grndEnemy").hide()
     } else {
@@ -452,32 +481,30 @@ function generateBaddies() {
                 right: 800
             }, (baddyType.speeds * spd), 'linear')
             i++
-            if (i < 500){
+            if (i < 100){
                 generateBaddies()
             }
             count++
-            if(count == 100) {
-                yaySound()
+            if(count == 80 || count == 160) {
+                endLevel()
             }
             document.getElementById('score').innerHTML = count.toString()
     }, (Math.floor(Math.random() * gap1 + gap2)))
 }
 }
 
-let enemies = document.querySelectorAll(".bad");
-
 // check for collisions... too much maths
 function collisionCheck() {
-    if (gameOver) {
-        
+    if (gameOver || levelWon) {
+        return
     } else {
-    baddiesCount.forEach((enem, index) => {
-    let barfPos = mrBarf.getBoundingClientRect()
-    let baddiePos = baddiesCount[index].getBoundingClientRect()
+        baddiesCount.forEach((enem, index) => {
+        let barfPos = mrBarf.getBoundingClientRect()
+        let baddiePos = baddiesCount[index].getBoundingClientRect()
 
     if ((baddiePos.top > barfPos.top && baddiePos.top < (barfPos.bottom - 20))||((baddiePos.bottom + 20) > barfPos.top && baddiePos.bottom < barfPos.bottom)) {
         verticalMatch = true
-      } else{
+      } else {
         verticalMatch = false
       }
       
@@ -490,6 +517,10 @@ function collisionCheck() {
       if (horizontalMatch && verticalMatch && addNew){
         // let intersect = true
         addNew = false
+        owNoise = Math.floor(Math.random() * 6)
+        owWav.src = './sounds/ow' + owNoise +'.wav'
+        owWav.currentTime = 0
+        owWav.play()
         $("#jumpBarf").attr("src", "./game-images/creature-hit.gif")
         setTimeout(resetHit, 1000)
         setTimeout(collisionCheck, 1000)
@@ -543,11 +574,12 @@ function showHearts () {
     gameScreen.append(heart0)
     gameScreen.append(heart1)
     gameScreen.append(heart2)
-    $(".hearts").fadeIn()
-    for (i = 0; i < 3; i++) {
-        $("#hrt" + i).attr("src", "./game-images/heart.png")
+    if (stage == 0) {
+        for (i = 0; i < 3; i++) {
+            $("#hrt" + i).attr("src", "./game-images/heart.png")
+        }
     }
-
+    $(".hearts").fadeIn()
 }
 
 function owSound() {
@@ -562,6 +594,12 @@ function deathSound() {
     deathWav.src = './sounds/death' + deathNoise +'.wav'
     deathWav.currentTime = 0
     deathWav.play()
+}
+
+function winSound() {
+    winWav.src = './sounds/music9.mp3'
+    winWav.currentTime = 0
+    winWav.play()
 }
 
 function barfDeath() {
@@ -600,10 +638,49 @@ function replayScreen() {
 }
 
 function resetGameCounts() {
-    document.getElementById('score').innerHTML = "0"
+    if (gameOver) {
+    count = 0
+    livesLost = 0
+    stage = 0
+    }
     i = 0
     spd = 1
     gap1 = 900
     gap2 = 800
     baddiesCount = []
+}
+
+function endLevel() {
+    yaySound()
+    $(".airEnemy").hide()
+    $(".grndEnemy").hide()
+    flagpole.style.bottom = "100px"
+    flagpole.style.right = "-50px"
+    $("#fpole").show()
+    bgImg.style.animation = "animatedBackground 0s linear infinite"
+    flagAppear()
+    levelWon = true
+    barfImg.src = "./game-images/creature-happy.gif"
+    $("#barf").animate({
+        left: 800
+    }, 2000, 'swing')
+    setTimeout(bgFadeOut, 1000)
+    setTimeout(newGame, 7000)
+}
+
+function bgFadeOut() {
+    $("#background").fadeOut(2500)
+    $("#fpole").fadeOut(2500)
+    $("#barf").fadeOut(2000)
+    $(".hearts").fadeOut(2500)
+    $("#score").fadeOut(2500)
+    winSound()
+    lvlWav.pause()
+    stage++
+}
+
+function flagAppear() {
+    $("#fpole").animate({
+        right: 100
+    }, 1000)
 }
