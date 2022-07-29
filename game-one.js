@@ -517,10 +517,6 @@ function collisionCheck() {
       if (horizontalMatch && verticalMatch && addNew){
         // let intersect = true
         addNew = false
-        owNoise = Math.floor(Math.random() * 6)
-        owWav.src = './sounds/ow' + owNoise +'.wav'
-        owWav.currentTime = 0
-        owWav.play()
         $("#jumpBarf").attr("src", "./game-images/creature-hit.gif")
         setTimeout(resetHit, 1000)
         setTimeout(collisionCheck, 1000)
