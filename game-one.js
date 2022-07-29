@@ -48,16 +48,12 @@ let okWav = new Audio('./sounds/okay2.wav')
 let overWav = new Audio('./sounds/gameover.wav')
 let replayWav = new Audio('./sounds/music1.mp3')
 
-let topSlot = "200px"
-let btmSlot = "100px"
-let rightSlot = "-100px"
-
 startBtn.addEventListener("click", startGame)
 againTitle.addEventListener("click", reloadGame)
 
 playBtn.addEventListener("click", loadIn)
 
-let gameOver = false
+let gameOver = true
 let verticalMatch = false
 let horizontalMatch = false
 let addNew = true
@@ -212,10 +208,10 @@ function introMusic() {
 
 function titleBarfFalls () {
     $("#barf-gif").animate({
-        top: 700
+        top: 1400
     }, 500, 'swing', function (){
         barfGif.style.right = "527px"
-        barfGif.style.top = "-500px"
+        barfGif.style.top = "-1000px"
         $("#title-room").fadeIn("3000")
         $("#barf-gif").animate({
             top: 427
@@ -229,7 +225,8 @@ function titleBarfFalls () {
 let dblJump = false
 
 document.addEventListener("keydown", (e) => {
-    if (e.repeat) { return }
+    if (e.repeat) { return 
+    } else if (!gameOver) {
     if (dblJump != false && e.key ==="w") {
         barfTallJump()
         dblJump = false
@@ -243,6 +240,7 @@ document.addEventListener("keydown", (e) => {
       if (e.key === "w"){
       setTimeout(barfFall, (flightTime + 80))
       }
+    }
 })
 
 let jumpTime = 0

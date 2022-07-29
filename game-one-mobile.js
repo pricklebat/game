@@ -225,7 +225,8 @@ function titleBarfFalls () {
 let dblJump = false
 
 gameScreen.addEventListener('touchstart', (e) => {
-    if (e.repeat) { return }
+    if (e.repeat) { return 
+    } else if (!gameOver) {
     if (dblJump != false) {
     barfTallJump()
     dblJump = false
@@ -237,7 +238,8 @@ gameScreen.addEventListener('touchstart', (e) => {
     flightTime = 150
   }
   setTimeout(barfFall, (flightTime + 80))
-  });
+    }
+});
 
 // document.addEventListener("keydown", (e) => {
 //     if (e.repeat) { return }
