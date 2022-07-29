@@ -383,6 +383,19 @@ a {
     image-rendering: pixelated;
 }
 
+.loadIn {
+    display: none;
+}
+
+#fpole {
+    width: 36px;
+    height: 112px;
+    position: absolute;
+    image-rendering: pixelated;
+    bottom: 100px;
+    right: -50px;
+}
+
 @keyframes animatedBackground {
     from { transform: translateX(0); }
     to { transform: translateX(-56.35%); }
@@ -428,9 +441,6 @@ a {
     }
     
 }
-.loadIn {
-    display: none;
-}
 
 @media (max-width: 800px) {
 
@@ -444,6 +454,7 @@ a {
         image-rendering: pixelated;
         z-index: 5;
     }
+
     #jumpBarf {
         height: 36px;
         width: 36px;
@@ -592,6 +603,15 @@ a {
 
     .blog-category {
         width: 100%;
+    }
+
+    #fpole {
+        width: 18px;
+        height: 56px;
+        position: absolute;
+        image-rendering: pixelated;
+        bottom: 50px;
+        right: -25px;
     }
 
 }
