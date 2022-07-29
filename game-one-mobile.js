@@ -434,7 +434,7 @@ let gap2 = 1000
 let highscoreList = []
 
 function generateBaddies() {
-    if (gameOver) {
+    if (gameOver || levelWon) {
         $(".airEnemy").hide()
         $(".grndEnemy").hide()
     } else {
@@ -653,8 +653,8 @@ function endLevel() {
     yaySound()
     $(".airEnemy").hide()
     $(".grndEnemy").hide()
-    flagpole.style.bottom = "100px"
-    flagpole.style.right = "-50px"
+    flagpole.style.bottom = "50px"
+    flagpole.style.right = "-25px"
     $("#fpole").show()
     bgImg.style.animation = "animatedBackground 0s linear infinite"
     flagAppear()
