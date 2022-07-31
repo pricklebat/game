@@ -11,6 +11,10 @@ let enemies = document.querySelectorAll(".bad");
 barfImg.src = "./game-images/creature-2.png"
 barfImg.id = "jumpBarf"
 
+let mapScreen = document.createElement("img")
+mapScreen.src = "./game-images/map-gif.gif"
+mapScreen.id = "map"
+
 let bgImg = document.createElement("img")
 bgImg.src = "./game-images/total-bg.png"
 bgImg.id = "background"
@@ -18,6 +22,12 @@ bgImg.id = "background"
 let flagpole = document.createElement("img")
 flagpole.src = "./game-images/flagpole.png"
 flagpole.id = "fpole"
+
+let finalScore = document.createElement("p")
+finalScore.id = "fnlScore"
+
+let highScore = document.createElement("p")
+highScore.id = "hiScore"
 
 let heart0 = document.createElement("img")
 let heart1 = document.createElement("img")
@@ -84,6 +94,7 @@ let count = 0
 let livesLost = 0
 let levelWon = false
 let stage = 0
+let canJump = false
 
 function loadIn() {
     barfGif.src = "./game-images/creature-happy.gif"
@@ -157,6 +168,7 @@ function muting() {
 function startGame() {
     $("#start-button").fadeOut("fast");
     $("#game-title").fadeOut("fast");
+    barfGif.src = "./game-images/creature-2.png"
     titleBarfFalls()
 }
 
@@ -176,7 +188,7 @@ function barfRunAni() {
     }, 1500, 'swing')
     setTimeout(runSound, 50)
     setTimeout(byeTitle, 1500)
-    setTimeout(newGame, 2000)
+    setTimeout(showMap, 2000)
 }
 
 function byeTitle() {
@@ -188,21 +200,22 @@ function byeTitle() {
 }
 
 function newGame() {
+    levelWon = false
     resetGameCounts()
-    document.getElementById("score").style.right = "35px"
-    document.getElementById("score").style.top = "-30px"
     replayWav.pause()
     winWav.pause()
-    levelWon = false
-    gameOver = false
     $("#score").fadeIn()
+    document.getElementById('score').innerHTML = count.toString()
+    gameOver = false
     mrBarf.style.left = "-50px"
     mrBarf.style.bottom = "100px"
     barfImg.src = "./game-images/creature-happy.gif"
     $("#barf").show()
     $("#barf").animate({
         left: "100px"
-    }, 200, 'linear')
+    }, 200, 'linear', function(){
+        canJump = true
+    })
     gameScreen.append(bgImg)
     gameScreen.append(flagpole)
     switchStage()
@@ -226,10 +239,22 @@ function switchStage() {
             break;
         case 1:
             bgImg.src = "./game-images/snow-bg.png"
+            lvlWav.src = './sounds/music17.mp3'
+            i = 15
+            break;
+        case 2:
+            bgImg.src = "./game-images/desert-bg.png"
+            lvlWav.src = './sounds/music16.mp3'
+            i = 30
+            break;
+        case 3:
+            bgImg.src = "./game-images/beach-bg.png"
             lvlWav.src = './sounds/music10.mp3'
+            i = 60
             break;
         default:
-            bgImg.src = "./game-images/total-bg.png"    
+            stage = 0
+            switchStage()  
             break;
     }
 }
@@ -249,7 +274,8 @@ function reloadGame() {
         left: "-100px"
     }, 1000, 'linear', function(){
         mrBarf.style.transform = "scaleX(1)"
-        $("#score").fadeOut()
+        $("#fnlScore").fadeOut()
+        $("#hiScore").fadeOut()
         $("#gOverT").fadeOut(function() {
             newGame()
     });
@@ -325,32 +351,31 @@ function titleBarfFalls () {
 
 let dblJump = false
 let fallSmall = false
+let jumpLock = false
+let jumpTime = 0
 
 document.addEventListener("keydown", (e) => {
     if (e.repeat) { return 
-    } else if (!gameOver) {
-    if (dblJump != false && e.key ==="w" || dblJump != false && e.key ===" ") {
+    } else if (canJump) {
+    if (dblJump != false && e.key ==="w"|| dblJump != false && e.key ===" ") {
         barfTallJump()
         dblJump = false
         flightTime = 200
         fallSmall = false
-      } else if (e.key ==="w" || e.key === " ") {
+      } else if (e.key ==="w" && !jumpLock || e.key === " " && !jumpLock) {
         barfShortJump()
         dblJump = true
         dblJump = setTimeout('dblJump = false', 250);
         flightTime = 150
         fallSmall = true
         fallSmall = setTimeout('fallSmall = false', 250);
+        jumpLock = true
       }
       if (e.key === "w" && fallSmall || e.key === " " && fallSmall){
       setTimeout(barfFall, (flightTime + 80))
       }
     }
 })
-
-
-let jumpTime = 0
-
 
 function barfTallJump() {
     jumpSound()
@@ -369,6 +394,7 @@ function barfShortJump() {
 }
 
 function barfFall() {
+    setTimeout(resetJump, (jumpTime - 60))
     $("#barf").animate({
         bottom: 100
     }, jumpTime, 'swing')
@@ -377,6 +403,10 @@ function barfFall() {
     } else {
         setTimeout(groundSound, 230)
     }
+}
+
+function resetJump(){
+    jumpLock = false
 }
 
 // make baddies appear!
@@ -429,8 +459,6 @@ let baddiesCount = []
 let gap1 = 1000
 let gap2 = 1000
 
-let highscoreList = []
-
 function generateBaddies() {
     if (gameOver || levelWon) {
         $(".airEnemy").hide()
@@ -469,23 +497,37 @@ function generateBaddies() {
                 spd = 0.55
                 gap1 = 500
                 gap2 = 400
-            } else if (i >= 120) {
+            } else if (i >= 120 && i < 300) {
                 spd = 0.5
+                gap1 = 500
+                gap2 = 400
+            }   else if (i >= 300) {
+                spd = 0.45
                 gap1 = 500
                 gap2 = 400
             }  
             
-
+            switch (baddyType){
+                case baddiesList[3]:
+                    if (i > 60) {
+                        gap2 = (gap2 * 1.6)
+                    } else if (i > 120) {
+                        gap2 = (gap2 * 1.9)
+                    } else {
+                        gap2 = (gap2 * 1.3)
+                    }
+                    break;
+                default:
+                break;
+            }
             
             $("." + baddyType.type + "nemy").animate({
                 right: 800
             }, (baddyType.speeds * spd), 'linear')
             i++
-            if (i < 100){
-                generateBaddies()
-            }
+            generateBaddies()
             count++
-            if(count == 80 || count == 160) {
+            if(count == 49 || count == 149 || count == 249 || count == 399) {
                 endLevel()
             }
             document.getElementById('score').innerHTML = count.toString()
@@ -571,8 +613,8 @@ function showHearts () {
     gameScreen.append(heart1)
     gameScreen.append(heart2)
     if (stage == 0) {
-        for (i = 0; i < 3; i++) {
-            $("#hrt" + i).attr("src", "./game-images/heart.png")
+        for (v = 0; v < 3; v++) {
+            $("#hrt" + v).attr("src", "./game-images/heart.png")
         }
     }
     $(".hearts").fadeIn()
@@ -599,6 +641,7 @@ function winSound() {
 }
 
 function barfDeath() {
+    canJump = false
     gameOver = true
     $(".hearts").fadeOut()
     $("#jumpBarf").attr("src", "./game-images/creature-sad.gif")
@@ -619,15 +662,23 @@ function barfDeath() {
 
 }
 
+let bestScore = 0
+
 function replayScreen() {
+    if (count > bestScore) {
+        bestScore = count
+    }
     barfImg.src = "./game-images/creature-sad.gif"
     gameScreen.append(gameOverTitle)
     gameScreen.append(againTitle)
-    document.getElementById("score").style.right = "360px"
-    document.getElementById("score").style.top = "220px"
+    gameScreen.append(finalScore)
+    gameScreen.append(highScore)
+    document.getElementById('hiScore').innerHTML = "Highscore: " + bestScore.toString()
+    document.getElementById('fnlScore').innerHTML = count.toString()
     $("#gOverT").fadeIn()
     $("#againT").fadeIn()
-    $("#score").fadeIn()
+    $("#hiScore").fadeIn()
+    $("#fnlScore").fadeIn()
     replayWav.currentTime = 0
     replayWav.play()
     replayWav.loop = true
@@ -638,8 +689,10 @@ function resetGameCounts() {
     count = 0
     livesLost = 0
     stage = 0
-    }
     i = 0
+    barfGif.style.right = "500px"
+    barfGif.style.top = "70px"
+    }
     spd = 1
     gap1 = 900
     gap2 = 800
@@ -647,6 +700,9 @@ function resetGameCounts() {
 }
 
 function endLevel() {
+    canJump = false
+    levelWon = true
+    mrBarf.style.bottom = "100px"
     yaySound()
     $(".airEnemy").hide()
     $(".grndEnemy").hide()
@@ -655,29 +711,96 @@ function endLevel() {
     $("#fpole").show()
     bgImg.style.animation = "animatedBackground 0s linear infinite"
     flagAppear()
-    levelWon = true
     barfImg.src = "./game-images/creature-happy.gif"
-    mrBarf.style.bottom = "100px"
+    setTimeout(winRun, 200)
+    setTimeout(bgFadeOut, 1000)
+}
+
+function winRun() {
     $("#barf").animate({
         left: 800
     }, 2000, 'swing')
-    setTimeout(bgFadeOut, 1000)
-    setTimeout(newGame, 7000)
 }
 
 function bgFadeOut() {
-    $("#background").fadeOut(2500)
+    $("#background").fadeOut(2500, function(){
+        showMap()
+    })
     $("#fpole").fadeOut(2500)
     $("#barf").fadeOut(2000)
     $(".hearts").fadeOut(2500)
     $("#score").fadeOut(2500)
-    winSound()
-    lvlWav.pause()
+    setTimeout(pauseLvlMusic, 2500)
     stage++
+}
+
+function pauseLvlMusic() {
+    lvlWav.pause()
 }
 
 function flagAppear() {
     $("#fpole").animate({
         right: 100
     }, 1000)
+}
+
+function showMap() {
+    winSound()
+    switch (stage) {
+        case 0:
+            gameScreen.append(mapScreen)
+            barfGif.src = "./game-images/creature-talk.gif"
+            barfGif.style.right = "500px"
+            barfGif.style.top = "70px"
+            $("#barf-gif").fadeIn(1000)
+            break;
+        default:
+            $("#barf-gif").fadeIn(1000, function(){
+                mapShift()
+            })
+            break;
+    }
+    $("#map").fadeIn(1000)
+    setTimeout(hideMap, 5000)
+}
+
+function hideMap() {
+    $("#map").fadeOut(1000)
+    $("#barf-gif").fadeOut(1000, function(){
+        newGame()
+        winWav.pause()
+    })
+}
+
+function mapShift() {
+    switch (stage) {
+        case 0:
+            break;
+        case 1:
+            $("#barf-gif").animate({
+                right: 350,
+                top: 260
+            }, 1000)
+            break;
+        case 2:
+            $("#barf-gif").animate({
+                right: -50,
+                top: 180
+            }, 1000)
+            break;
+        case 3:
+            $("#barf-gif").animate({
+                right: -490,
+                top:  90
+            }, 1000)
+            break;
+        case 4:
+            $("#barf-gif").animate({
+                right: -350,
+                top: 350
+            }, 1000)
+            break;
+        default:
+
+    }
 }

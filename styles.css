@@ -318,6 +318,17 @@ a {
     image-rendering: pixelated;
 }
 
+#map {
+    height: 600px;
+    width: 800px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    image-rendering: pixelated;
+    display: none;
+}
+
 .grndEnemy {
     bottom: 100px;
 }
@@ -342,6 +353,37 @@ a {
     position: absolute;
     right: 35px;
     top: -30px;
+    display: none;
+    z-index: 4;
+    image-rendering: pixelated;
+}
+
+#fnlScore {
+    color: black;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 210px;
+    display: none;
+    z-index: 4;
+    image-rendering: pixelated;
+}
+
+#hiScore {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    left: 30px;
+    text-align: center;
+    top: 10px;
     display: none;
     z-index: 4;
     image-rendering: pixelated;
@@ -444,6 +486,13 @@ a {
 
 @media (max-width: 800px) {
 
+    #map {
+        height: 300px;
+        width: 400px;
+        top: 0;
+        left: 0;
+    }
+
     #volumeBtn {
         height: 38px;
         width: 38px;
@@ -520,6 +569,17 @@ a {
         font-size: 30px;
         right: 18px;
         top: -22px;
+    }
+
+    #fnlScore {
+        font-size: 30px;
+        top: 105px;
+    }
+
+    #hiScore {
+        font-size: 15px;
+        left: 15px;
+        top: 5px;
     }
     
     .hearts {
