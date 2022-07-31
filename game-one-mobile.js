@@ -365,14 +365,13 @@ document.addEventListener('touchstart', (e) => {
         dblJump = false
         flightTime = 200
         fallSmall = false
-    } else if (!jumpLock) {
+    } else {
         barfShortJump()
         dblJump = true
         dblJump = setTimeout('dblJump = false', 250);
         flightTime = 150
         fallSmall = true
         fallSmall = setTimeout('fallSmall = false', 250);
-        jumpLock = true
     }
     if (fallSmall){
         setTimeout(barfFall, (flightTime + 80))
@@ -408,10 +407,6 @@ function barfFall() {
     }
 }
 
-function resetJump(){
-    jumpLock = false
-}
-
 // make baddies appear!
     // run the function to randomise the baddy
     // if it's a floor baddy, make it appear on the floor
@@ -424,7 +419,7 @@ let airSp = {
     type: "airE"
 }
 
-let grSp = {
+let bigBox = {
     visual: "enemy3.gif",
     speeds: 2000,
     type: "grndE"
@@ -438,7 +433,7 @@ let wlkSp = {
 
 let pnkSqu = {
     visual: "enemy5.gif",
-    speeds: 1500,
+    speeds: 1600,
     type: "grndE"
 }
 
@@ -454,7 +449,13 @@ let bat = {
     type: "airE"
 }
 
-let baddiesList = [airSp, grSp, wlkSp, pnkSqu, grnSqu, bat]
+let bluSqu = {
+    visual: "enemy6.gif",
+    speeds: 1900,
+    type: "grndE"
+}
+
+let baddiesList = [airSp, grSp, wlkSp, pnkSqu, grnSqu, bat, bluSqu]
 
 let i = 0
 let x = 0
@@ -515,7 +516,7 @@ function generateBaddies() {
             switch (baddyType){
                 case baddiesList[3]:
                     if (i > 60) {
-                        gap2 = (gap2 * 1.6)
+                        gap2 = (gap2 * 1.65)
                     } else if (i > 120) {
                         gap2 = (gap2 * 1.9)
                     } else {
